@@ -1,0 +1,34 @@
+<html>
+<head>
+      <title>小实例</title>
+</head>
+<body>
+      <h2><center><b>普通话考试通知</b></center></h2>
+      计算机学院普通话测试开始报名，具体事项如下：<br>
+      <ol type="1">
+            <li><strong>报名</strong></li>
+            <ol type="A">
+                  <li>报名时间：3.16-21，逾期不予处理。</li>
+                  <li>报名地点：所在系办公室。</li>
+                  <li>报名费用：按物价局规定85元/人（含培训费用），报名时交齐。</li>
+                  <li>提交资料及注意事项：</li>
+                  <ol type="a">
+                          <li>参加测试的学生须填写报名表。</li>
+                          <li>填写准考证一份。</li>
+                          <li>提交小寸彩色证件照一张。</li>
+                  </ol>
+            </ol>
+            <li><strong>培训</strong></li>
+                  <ol type="A">
+                        <li>培训时间：3.31</li>
+                        <li>培训地点：503教室</li>
+                        <li>注意事项：自带用书。</li>
+            <li><strong>测试</strong></li>
+                  <ol type="A">
+                        <li>测试时间：4.7-4.8</li>
+                        <li>测试地点：401教室</li>
+                  </ol>
+                  <p>（注：具体时间和地点按学院网站为准）</p>
+      </ol>
+</body>
+</html>
