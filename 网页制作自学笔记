@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charest="utf-8" />
+		<title>我的第一个页面</title>
+	</head>
+	<body>
+	hello,htlm5
+	</body>
+</html>
+增加：section article nav aside hgroup footer header figure
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charest="utf-8" />
+		<title>我的第一个页面</title>
+	</head>
+	<body>
+	<header>
+		<div id="container">
+			<nav>
+				<ul>
+					<li><a herf="#">Home</a></li>
+					<li><a herf="#">Home</a></li>
+					<li><a herf="#">Home</a></li>
+					<li><a herf="#">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+		<div id="content">
+			<aside>
+				<div class="inside">
+					<h2>Latested News</h2>
+					<ul>
+					<li><a herf="#">june 30,2010</a>ASDADASDA</li>
+					<li><a herf="#">Home</a></li>
+					<li><a herf="#">Home</a></li>
+					</ul>
+				</div>
+			</aside>
+			<section>
+				<h2>Latested News</h2>
+				<p> diyiduan  </p>
+				<p>  dierduan </p>
+				<h2>Latested News</h2>
+				<ul>
+					<li><img src="1.jpg">ASDADASDA</li>
+					<li><a herf="#">Home</a></li>
+					<li><a herf="#">Home</a></li>
+				</ul>
+			</section>
+		</div>
+		<footer>
+			<div id="myfooter">
+				<a herf="#">website remplate</a>
+			</div>
+		</footer>
+	</body>
+</html>
+新增语意元素：mark progress time details datalist ruby menu command
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charest="utf-8" />
+		<title>我的第一个页面</title>
+	</head>
+	<body>
+	<p>I
+		<mark>love</mark>
+		You!
+	</p>
+	Downloading progress:
+	<progress value="22" max="100">
+	</progress>
+	<p>We open at 
+		<time>10:00</time>
+		every morning.
+	</p>
+	<details open="open">
+		<summary>Copyright 1999-2011.</summary>
+		<p> .........</p>
+		<p>..........</p>
+	</details>
+	<input list="browsers">
+	<datalist id="browsers">
+		<option value="internet explore">
+		<option value="internet explore">
+		<option value="internet explore">
+		<option value="internet explore">
+	</datalist>
+	<ruby>
+	     汗
+	     <rt>
+	     	han
+	     </rt>
+	</ruby>
+	</body>
+</html>
+input输入类型: email url number range Date Pickers search tel color
+input属性：autocomplete autofocus form formation formenctype formmethod fornovalidate formtarget height width list min max step multiple pattern placeholder required
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charest="utf-8" />
+		<title>我的第一个页面</title>
+	</head>
+	<body>
+	<form action="#" method="get">
+		<input type="email" name="user_email"/><br/>
+		<input type="url" name="user_url"/><br/>
+		<input type="number" name="user_number" value="1" max="100" min="1" step="2"/><br/>
+		<input type="range" name="user_range" value="1" max="100" min="1" step="2"/><br/>
+
+		<input type="date" name="user_date"/><br/>
+		<input type="month" name="user_month"/><br/>
+		<input type="week" name="user_week"/><br/>
+		<input type="time" name="user_time" value="12:10:14" min.... max..... step...../><br/>
+		<input type="datetime" name="user_datetime"/><br/>
+		<input type="datetime-local" name="user_datetime-local"/><br/>
+		<input type="search" name="user_search"/><br/>
+		<input type="tel" name="user_tel"/><br/>
+		<input type="color" name="user_color"/><br/>
+		<input type="submit" value="提交"/>
+		//<button type="submit">提交</button>
+	</form>
+	</body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charest="utf-8" />
+		<title>我的第一个页面</title>
+	</head>
+	<body>
+	<form action="#" method="get">
+		用户名：<input type="text" name="username" autocomlete="on"/><br/>
+		密码：<input type="text" name="password" autocomlete="off"/><br/>
+		<input type="submit" value="登录"/>
+	</form>
+	<form>
+		<p><label for="textreal">请仔细阅读许可协议：</ladel></p>
+
+		<p>
+
+			<textarea name="textreal" id="textreal" cols="45" roms="5">许可协议
+			</br>
+		</p>
+		<p>
+			<input type="submit" value="同意" autofocus="on">
+			<input tyoe="submit" value="拒绝">
+		</p>
+	</form>
+	<form aciton="" method="get" id="form1">
+	请输入姓名：<input type="text" name="name1" autofocus/>
+	<input type="submit" value="提交"/>
+	</form>
+	<p>...</p>
+	请输入住址：<input type="text" name="address1" form="form1" />
+	<form action="#" method="get">
+	<datalist id="url_list">
+		<option label="新浪" value="http://www.sina.com.cn" />
+		<option label="搜狐" value="http://www.sohu.com.cn" />
+		<option label="网易" value="http://www.163.com.cn" />
+	</datalist>
+	<input type="submit" value="提交">
+	</form>
+	<form action="testform.asp" method="get">
+	请输入数值：<input type="number" name="number1" min="0" max="12" step="4" />
+	<input type="submit" value="提交" />
+	<form action="#" method="get">
+	请选择要上传的图片：Select images:<input type="file" name="img" multiple>
+	<input type="submit" value="提交">
+	</form>
+	<form action="#" method="get">
+	请输入国家名：<input type="text" name="country code" pattern="[A-Za-z]{3}" title="3个字母国家代码">
+	<input type="submit" value="提交">
+	</form>
+	<form action="#" method="get">
+	请输入国家名：<input type="text" name="country code" pattern="[A-Za-z]{3}" placeholder="3个字母国家代码">
+	<input type="submit" value="提交">
+	</form>
+	form action="#" method="get">
+		用户名：<input type="text" name="usr_name" required="required" />
+		密码：<input type="text" name="password" autocomlete="off"/><br/>
+		<input type="submit" value="登录"/>
+	</form>
+		form action="#" method="get">
+		用户名：<input type="text" name="usr_name" required="required" />
+		密码：<input type="text" name="password" autocomlete="off"/><br/>
+		<input type="image" src="../images/play.png" width="64" height="64" />
+		<input type="submit" value="登录"/>
+	</form>
+	<form action="#" enctype="application/x-www-form-urlencoded" id="testform" method="get">
+	请输入电子邮件地址：<input type="email" name="userid" /><br />
+					<input type="submit" value="formaction" formaction="list.html" />
+					<input type="submit" value="formentype" formentype="multipart/form-data" />
+					<input type="submit" value="formmethod" formmethod="post" />
+					<input type="submit" value="formnovalidate" formnovalidate="formnovalidate" />
+					<input type="submit" value="formtarget" formtarget="_self" />
+	</form>
+	</body>
+</html>
+新增的form元素：datalist keygen output
+<form action="#" method="get">
+	请输入网址：<input type="text" list="brower_list" name="brower" />
+	<datalist id="brower_list">
+		<option label="IE" value="Internet Explorer">
+		<option label="火狐" value="Firefox">
+		<option label="谷歌" value="Google">
+		<option label="欧朋" value="opera">
+		<option label="苹果" value="Safari">
+	</datalist>
+	<input type="submit" value="提交" />
+	</form>
+	<form action="#" method="get">
+	请输入用户名： <input type="text" name="user_name" /><br/>
+	请选择加密强度：<keygen name="security" /><br/>
+	<input type="submit" value="提交" />
+	</form>
+!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;; charset=utf-8">
+</head>
+<head>
+<script type="text/javascript">
+	function mulit(){
+			a=parseInt("请输入第1个数字。",0);
+			b=parseInt("请输入第2个数字。",0);
+			document.forms["form"]["result"].value=a*b;
+	}
+</script>
+</head>
+<body onload="mulit()">
+<form action="#" method="get" name="form">
+俩数的乘积是：<output name="result"></output>
+</form>
+form新增属性：autocomplete novalidate
+<form action="#" method="get" novalidate="true">或者<form action="#" method="get" autocomplete="off">
+请输入电子邮件地址：<input type="email" name="user_email" /></br>
+请输入邮政编码：<input type="text" name="zip_code" pattern="[0-9]{6}" title="请输入6位数的邮政编码"／>
+<input type="submit" value="提交">
+</form>
+Canvas元素的绘图功能：
+绘制直线的相关方法：beginPath moveTo lineTo stroke
+直线的相关属性：lineWidth strokeStyle 直线端点样式 butt round square
+绘制弧线方法：arcTo quadraticCurveTo bezierCurveTo
+
+<!DOCTYPE HTML>
+<html>
+<head lang="en">
+	<meta charset=utf-8">
+	<title></title>
+	<style>
+	body{
+			margin: 0px;
+			padding: 0px;
+	}
+		#mycanvas{
+					border: 1px soild #9c9898;
+		}
+	</style>
+	<script type=text/javascript>
+		window.onload=function(){
+			var canvas=document.getElementById("mycanvas");
+			var context=canvas.getCotext("2d");
+			context.beginPath();
+			context.moveTo(200,canvas.height/2);
+			context.lineTo(canvas.width-200,canvas.height/2);
+			context.lineWidth=20;
+			context.strokeStyle="#ff0000";
+			context.lineCap="round";
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(200,canvas.height/2);
+			context.lineTo(canvas.width-200,canvas.height/2);
+			context.lineWidth=20;
+			context.strokeStyle="#ff0000";
+			context.lineCap="square";
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(200,canvas.height/2);
+			context.lineTo(canvas.width-200,canvas.height/2);
+			context.lineWidth=20;
+			context.strokeStyle="#ff0000";
+			context.lineCap="butt";
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(20，20);
+			context.lineTo(100，20);
+			context.arcto(150,20,150,70,50);
+			context.lineTo(150,120);
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(200,canvas.height/2);
+			context.quadraticCurveTo(288,0,388,150);
+			context.lineWidth=5;
+			context.strokeStyle="blue";
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(500,130);
+			context.bezierCurveTo(400,10,588,10,688,170);
+			context.lineWidth=5;
+			context.strokeStyle="blue";
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(100,20);
+			context.lineTo(200,160);
+			context.quadraticCurveTo(230,200,250,120);
+			context.bezierCurveTo(290,-40,300,200,400,150);
+			context.lineTo(500,90);
+			context.lineWidth=5;
+			context.strokeStyle="blue";
+			context.stroke();
+		}
+</head>
+<body>
+<canvas id="mycanvas" width="578" height="200">
