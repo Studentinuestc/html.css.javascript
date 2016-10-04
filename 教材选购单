@@ -6,6 +6,27 @@
     </style>
 </head>
 <body>
-    
+<div id="Container"><!--页面层容器--!>
+       <div id="Header"><!--页面头部--!>
+           <h2 align="center">教材选购单</h2>
+       </div>
+       <div id="PageBody"><!--页面主体--!>
+       <div class=ContentBody>
+            <div class=title>你想购买那几本教材</div>
+            <form>
+            <div class=textList>
+                <div class=div_height align=left>
+                    <input type="checkbox" name="textbook">JSP实用教材</div>
+                <div class=div_height align=left>
+                    <input type="checkbox" name="textbook">SQL Server 开发与维护</div>
+            </div>
+            <div class=fasong>
+                <div class=div_height align=left>
+                    <input type="button" value="发送教材选购单"></div>
+            </div>
+            </form>
+       </div>
+    </div>
+</div>
 </body>
 </html>
