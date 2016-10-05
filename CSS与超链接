@@ -1,0 +1,26 @@
+<html>
+<head>
+    <style type="text/css">
+    .container{width:400;margin:0 auto;text-align:center;}
+    #album{list-style:none;font-size:12px;line-height:1.5;}
+    #album li{float:left;width:68px;margin:10px;}
+    img{border:0}
+    a.link{color:#333333;text-decoration:none;}
+    a.visited{color:#333333;text-decoration:none;}
+    a.hover{color:#ff0000;text-decoration:underline;}
+    a.active{color:#ff0000;text-decoration:underline;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul id="album">
+            <li><a href="images/img01.html" target="_blank"><img src="images/1.jpg" width="68" height="54" />...</a></li>
+            <li><a href="images/img02.html" target="_blank"><img src="images/2.jpg" width="68" height="54" />...</a></li>
+            <li><a href="images/img03.html" target="_blank"><img src="images/3.jpg" width="68" height="54" />...</a></li>
+            <li><a href="images/img04.html" target="_blank"><img src="images/4.jpg" width="68" height="54" />...</a></li>
+            <li><a href="images/img05.html" target="_blank"><img src="images/5.jpg" width="68" height="54" />...</a></li>
+            <li><a href="images/img06.html" target="_blank"><img src="images/6.jpg" width="68" height="54" />...</a></li>
+        </ul>
+    </div>
+</body>
+</html>
