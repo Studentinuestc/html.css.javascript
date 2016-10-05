@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title></title>
+<style type="text/css">
+.container{width:750px; margin:0 auto; text-align:center; background-color:#fff; padding:30px;}
+h1{font-family:黑体;font-size:24px;color:#059;letter-spacing:12px;}
+.source{font-family:宋体;color:black;font-size:14px;}
+.content{font-size:14px;}
+p{text-align:left;font-size:14px;text-indent:2em;}
+</style>
+<body>
+<div class="container">
+      <img src="super.jpg" width=750 height=200>
+       <h1><i>.....</i></h>
+        <div class="source">
+          <u><a href="http://edu.sina.com.cn">...</a></u>......
+        </div>
+        <div class="content">
+        <p></p>
+        <p><font size="4px" color="red">...</font></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        ....
+        </div>
+</div>
+</body>
+</head>
+</html>
