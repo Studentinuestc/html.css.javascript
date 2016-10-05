@@ -1,0 +1,21 @@
+<html>
+<head>
+    <style type="text/css">
+    .container{width:650px;margin:0 auto;text-align:center;background-color:#FFFFFF;padding:20px;}
+    #nav{list-style:none;font-size:22px;line-height:40px;}
+    #nav li{margin-right:5px;float:left;width:100px;}
+    .home{border-top:4px;solid #7BC110;background:#be6;}
+    .activity{border-top:4px solid #ff9900;background:#fc6;}
+    .personal{border-top:4px solid #ff66ff;background:#fcf;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul id="nav">
+        <li class="home">...</li>
+        <li class="activity">...</li>
+        <li class="personal">...</li>
+        </ul>
+    </div>
+</body>
+</html>
