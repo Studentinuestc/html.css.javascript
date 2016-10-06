@@ -1,0 +1,47 @@
+<html>
+<head>
+      <title>酒店预定</title>
+      <link rel="stylesheet" type="text/css" href="css/html.css"/>
+<style type="text/css">
+   Body{color:#333;font-size:14px;line-height:1.5;background-color:#fff;}
+   #content{margin:0 auto; width:600px; border:1px solid red;}
+   .tip{background-color:#fefal1;border:solid 1px #fed698; padding:8px 8px 8px 32px;}
+   lable{float:left; width:60px; text-align:right;}
+   input,select{margin-right:4px; margin-left:10px; float:left; width:170px;}
+   span{float:left; margin-right:4px;}
+   .order{height:26px;margin:7px 0;}
+   .submit{background-color:#f90;display:line-block;border-radius:3px;color:#fff;cursor:pointer;font-weight:bold;padding:6px 22px;}
+   input:focus,input:hover,select:focus,select:hover{color:#000;background:#E7E1F3;border:1px solid #888;}
+</style>
+<body>
+    <div id="content">
+      <div class="tip">
+          <P>现在&nbsp;<A href="">登录</A>&nbsp;即可预定可享酒店会员专属优惠，并可直接使用常用预定信息</P>
+      </div>
+      <form id="room" action="" method="post">
+      <div class="order">
+          <lable>房间数量</lable>
+          <input type="number" min="1" value="1"><span>房费</span>¥<strong>XXX</strong>  
+      </div>
+      ......
+      <div class="order"><lable>最晚抵达</lable>
+          <select name="select" autocomplete="off">
+          <option selected="selected" value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+          <option value="23:00">23:00</option>
+          <option value="24:00">24:00</option>
+          <option value=" 次日6:00">次日6:00</option>
+          </select>
+      </div> 
+      ....
+      <div class="submit">
+      提交订单
+      </div>
+      </form>
+    </div>
+</body>
+</head>
+</html>
