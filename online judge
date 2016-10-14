@@ -1,0 +1,1461 @@
+<html lang="en" ng-app="cdoj" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+  <link rel="icon" type="image/png" href="/images/logo/favicon128.png">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!--[if lte IE 8]>
+  <script>
+    window.location.href = "/fuckIE";
+  </script>
+  <![endif]-->
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/dist/css/cdoj.min.css">
+
+  <title ng-bind="$root.finalTitle" class="ng-binding">UESTC Online Judge</title>
+
+  <script type="text/javascript" async="" src="http://stats.g.doubleclick.net/dc.js"></script><script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-47734287-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div></div><div id="MathJax_Message" style="display: none;"></div>
+<header id="cdoj-navbar-top">
+  <div class="container ng-scope" ng-controller="HeaderController">
+    <nav>
+      <ul class="nav navbar-nav navbar-right" style="min-height: 50px;">
+        <!-- ngIf: $root.hasLogin -->
+        <!-- ngIf: $root.hasLogin -->
+        <!-- ngIf: $root.hasLogin -->
+        <!-- ngIf: $root.hasLogin == false --><li dropdown="" ng-if="$root.hasLogin == false" class="ng-scope">
+          <a href="" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Sign in
+          </a>
+          <ul ui-dropdown-menu="" class="dropdown-menu cdoj-form-menu" style="width: 340px;">
+            <li>
+              <form class="ng-pristine ng-valid">
+                <div class="input-group form-group input-group-sm">
+                  <span class="input-group-addon">
+                    <i class="fa fa-user" style="width: 14px;"></i>
+                  </span>
+                  <input type="text" ng-model="userLoginDTO.userName" maxlength="24" id="userName" class="form-control ng-pristine ng-valid" placeholder="Username">
+                </div>
+                <div class="input-group form-group input-group-sm">
+                  <span class="input-group-addon">
+                    <i class="fa fa-key" style="width: 14px;"></i>
+                  </span>
+                  <input type="password" ng-model="userLoginDTO.password" id="password" class="form-control ng-pristine ng-valid" placeholder="Password">
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default" ng-click="login()">
+                      Login
+                    </button>
+                  </span>
+                </div>
+                <ui-validate-info value="fieldInfo" for="password" class="ng-isolate-scope"><span class="validate-info ng-binding ng-hide" ng-show="isInvalid" ng-bind="message"></span></ui-validate-info>
+              </form>
+            </li>
+            <li role="presentation" class="divider"></li>
+            <li>
+              <a href="/#/user/register">
+                <i class="fa fa-arrow-circle-right" style="padding-right: 6px;"></i>Register</a>
+              <a href="javascript:void(0);" ng-click="openForgetPasswordModal()">
+                <i class="fa fa-arrow-circle-right" style="padding-right: 6px;"></i>Forget password?
+              </a>
+            </li>
+          </ul>
+        </li><!-- end ngIf: $root.hasLogin == false -->
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="cdoj-layout">
+  <div id="cdoj-navbar">
+    <div id="cdoj-navbar-menu" class="row">
+      <div class="col-md-12">
+        <div class="cdoj-menu">
+          <ul class="nav nav-pills nav-stacked">
+            <li class="cdoj-menu-heading"><span class="cdoj-menu-item">CDOJ</span></li>
+
+            <li active-link="" class="active">
+              <a href="/"><i class="fa fa-home"></i><span class="cdoj-menu-item">Home</span></a>
+            </li>
+            <li active-link="problem" class="">
+              <a href="/#/problem/list">
+                <i class="fa fa-puzzle-piece"></i><span class="cdoj-menu-item">Problems</span>
+              </a>
+            </li>
+            <li active-link="contest" class="">
+              <a href="/#/contest/list">
+                <i class="fa fa-trophy"></i><span class="cdoj-menu-item">Contests</span>
+              </a>
+            </li>
+            <li active-link="status" class="">
+              <a href="/#/status/list">
+                <i class="fa fa-refresh"></i><span class="cdoj-menu-item">Status</span>
+              </a>
+            </li>
+            <li active-link="user" class="">
+              <a href="/#/user/list">
+                <i class="fa fa-user"></i><span class="cdoj-menu-item">Users</span>
+              </a>
+            </li>
+            <li active-link="training" class="">
+              <a href="/#/training/list">
+                <i class="fa fa-paper-plane-o"></i><span class="cdoj-menu-item">Training</span>
+              </a>
+            </li>
+            <li>
+              <a href="http://acm.uestc.edu.cn/bbs/">
+                <i class="fa fa-comments"></i><span class="cdoj-menu-item">BBS</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="cdoj-container">
+    <!-- ngView:  --><div ng-view="" style="min-height: 600px;" class="ng-scope"><div id="cdoj-index" class="ng-scope">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="hero">
+        <div class="hero-titles">
+          <h1>CDOJ</h1>
+
+          <h2 ng-bind="$root.Version" class="ng-binding">V2.2.2</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <ul class="nav nav-pills nav-justified thumbnail">
+        <li ng-class="{active: isRecentNews}" class="active">
+          <a href="javascript:void(0);" ng-click="showRecentNews()">
+            <h4 class="list-group-item-heading"><i class="fa fa-rss"></i></h4>
+
+            <p class="list-group-item-text">Recent news</p>
+          </a>
+        </li>
+        <li ng-class="{active: isRecentContests}" class="">
+          <a href="javascript:void(0);" ng-click="showRecentContests()">
+            <h4 class="list-group-item-heading"><i class="fa fa-calendar"></i></h4>
+
+            <p class="list-group-item-text">Recent contests</p>
+          </a>
+        </li>
+        <li ng-class="{active: isArticle &amp;&amp; currentArticleId == 1}" class="">
+          <a href="javascript:void(0);" ng-click="showArticle(1)">
+            <h4 class="list-group-item-heading"><i class="fa fa-question-circle"></i></h4>
+
+            <p class="list-group-item-text">F.A.Qs</p>
+          </a>
+        </li>
+        <li ng-class="{active: isArticle &amp;&amp; currentArticleId == 7}" class="">
+          <a href="javascript:void(0);" ng-click="showArticle(7)">
+            <h4 class="list-group-item-heading"><i class="fa fa-download"></i></h4>
+
+            <p class="list-group-item-text">Download</p>
+          </a>
+        </li>
+        <li ng-class="{active: isArticle &amp;&amp; currentArticleId == 6}" class="">
+          <a href="javascript:void(0);" ng-click="showArticle(6)">
+            <h4 class="list-group-item-heading"><i class="fa fa-rocket"></i></h4>
+
+            <p class="list-group-item-text">Step-By-Step</p>
+          </a>
+        </li>
+        <li ng-class="{active: isArticle &amp;&amp; currentArticleId == 2338}" class="">
+          <a href="javascript:void(0);" ng-click="showArticle(2338)">
+            <h4 class="list-group-item-heading"><i class="fa fa-trophy"></i></h4>
+
+            <p class="list-group-item-text">Teams Honors</p>
+          </a>
+        </li>
+        <li ng-class="{active: isArticle &amp;&amp; currentArticleId == 4}" class="">
+          <a href="javascript:void(0);" ng-click="showArticle(4)">
+            <h4 class="list-group-item-heading"><i class="fa fa-terminal"></i></h4>
+
+            <p class="list-group-item-text">About</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-12" ng-show="isRecentNews">
+      <div condition="articleCondition" request-url="/article/search" name="article" class="ng-isolate-scope">
+  <div class="col-md-12 ng-hide" ng-show="pageInfo.totalItems > itemsPerPage">
+    <ul class="pagination-sm pagination ng-isolate-scope ng-pristine ng-valid" total-items="pageInfo.totalItems" items-per-page="itemsPerPage" ng-model="condition.currentPage" max-size="showPages" boundary-links="true" previous-text="‹" next-text="›" first-text="«" last-text="»">
+  <!-- ngIf: boundaryLinks --><li ng-if="boundaryLinks" ng-class="{disabled: noPrevious()}" class="ng-scope disabled"><a href="" ng-click="selectPage(1)" class="ng-binding">«</a></li><!-- end ngIf: boundaryLinks -->
+  <!-- ngIf: directionLinks --><li ng-if="directionLinks" ng-class="{disabled: noPrevious()}" class="ng-scope disabled"><a href="" ng-click="selectPage(page - 1)" class="ng-binding">‹</a></li><!-- end ngIf: directionLinks -->
+  <!-- ngRepeat: page in pages track by $index --><li ng-repeat="page in pages track by $index" ng-class="{active: page.active}" class="ng-scope active"><a href="" ng-click="selectPage(page.number)" class="ng-binding">1</a></li><!-- end ngRepeat: page in pages track by $index -->
+  <!-- ngIf: directionLinks --><li ng-if="directionLinks" ng-class="{disabled: noNext()}" class="ng-scope disabled"><a href="" ng-click="selectPage(page + 1)" class="ng-binding">›</a></li><!-- end ngIf: directionLinks -->
+  <!-- ngIf: boundaryLinks --><li ng-if="boundaryLinks" ng-class="{disabled: noNext()}" class="ng-scope disabled"><a href="" ng-click="selectPage(totalPages)" class="ng-binding">»</a></li><!-- end ngIf: boundaryLinks -->
+</ul>
+  </div>
+  <div ng-transclude="">
+        <!-- ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2876" ng-bind="article.title" class="ng-binding">电子科技大学ACM-ICPC代表队出征2016年世界总决赛！</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/qscqesze/2876" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">1200</span> visited, create by
+    <a href="/#/user/center/qscqesze" ng-bind="article.ownerName" class="ng-binding">qscqesze</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">4 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><p>电子科技大学ACM-ICPC代表队，将于5月15~20日参加第40届ACM国际大学生程序设计竞赛世界总决赛。 </p>
+<p>经过一个赛季的鏖战，最终UESTC_murasame队伍脱颖而出，他们将在集训队教练杨鹏老师的带领下，代表我校参加世界总决赛。</p>
+<p>啪啪啪 鼓掌！</p>
+<p class="text-center">
+<img src="/images/article/qscqesze/2876/2016051217324971550.png" alt="title">
+<br>
+UESTC_murasame队（胡剑箫（左一），林思睿（左二），何柱（右一））
+</p>
+
+
+<p class="text-center">
+<img src="/images/article/qscqesze/2876/2016051821182071453.jpg" alt="title">
+<br>
+UESTC_murasame队在泰国普吉岛传回的照片 
+</p>
+
+<h3 id="uestc_murasame-">UESTC_murasame队伍介绍：</h3>
+<hr>
+<h4 id="-">胡剑箫（福大神）：</h4>
+<p>福大神，LL厨，花阳厨，资深萝莉控。</p>
+<p>死宅，每周步数常年处于原八大常委最后两位。</p>
+<p>爱好非常广泛，已知的有：LL，海王星，nekopara，梅露可物语，芳文社的所有番，百合番，萝莉番，东方（猜测本命是恋恋）</p>
+<p>在232你可能会有幸看到一个头发略乱，趴在一张折叠床上用ipad在打LL的神秘人物，没错那就是小福了。</p>
+<p>福大神也是一个喜欢写短码的选手，思维很强，平时训练可能会突然过个迷之题，特别吓人。</p>
+<p>TC：<a href="https://www.topcoder.com/members/hjx1212/" style="color:#fcd617;  font-weight: bold;">hjx1212</a></p>
+<p>CF：<a href="http://codeforces.com/profile/hjx1212" style="color:#a0a;  font-weight: bold;">hjx1212</a></p>
+<p><br></p>
+<h4 id="-">何柱（柱爷）：</h4>
+<p>集训队一堆以<code>爷</code>做后缀的人之一，现在大二，以碾压的方式保(qin)送(ding)进入ACM集训队。</p>
+<p>短码大师，CF一年红名，现已是本校CF全校第一！</p>
+<p>计算机学院一霸，乐器精通，PS精通，（把妹精通。</p>
+<p><img src="/images/article/qscqesze/2876/2016051217320548249.png" alt="title"></p>
+<p>在队中专攻 <del>一切ACM题目</del> 除了乱搞和数据结构的题目，代码能力极强。喜欢水群。</p>
+<p>TC：<a href="https://www.topcoder.com/members/Herzu/" style="color: rgb(255, 255, 0);  font-weight: bold;">Herzu</a></p>
+<p>CF：<a href="http://codeforces.com/profile/Hezhu" style="color: rgb(255, 0, 0);  font-weight: bold;">Hezhu</a></p>
+<p><img src="/images/article/qscqesze/2876/2016051217252353440.jpg" alt="title"></p>
+<p>柱爷拥有名为"拜柱神教"的粉丝集团！同时，柱爷的某位神秘粉丝巨资购入<a href="http://mozhu.today">mozhu.today</a>域名，以表达每日膜柱之情。
+<del>据说此域名的网站会在日后建成，作为专门的膜柱网站。</del></p>
+<p><br></p>
+<h4 id="-">林思睿：</h4>
+<p>林学长，今年研一，是该队唯一一个较为正常的人类，负责队内正常的题目。</p>
+<p>神秘的林学长是一个特别刻苦的人，能够待在基地，忍受雨打风吹，不停地刷题，晚上困了，就直接倒在桌子上睡觉的人。</p>
+<p>林学长一年前打铁，而今年就出线了，是正面的典型。</p>
+<p>送上林学长帅照一张：</p>
+<p><img src="/images/article/qscqesze/2876/2016051523415415152.jpg" alt="title"></p>
+<hr>
+<p>他们已于5月14日晚到达泰国普吉岛，祝愿他们能在19日举行的Final上再创佳绩！届时可以在bilibili等平台上关注我校学子的表现！</p></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/1993" ng-bind="article.title" class="ng-binding">解题报告提交格式</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/Toxic/1993" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">1032</span> visited, create by
+    <a href="/#/user/center/Toxic" ng-bind="article.ownerName" class="ng-binding">Toxic</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">5 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><h3 id="-">补充说明：<code>关于评分</code> （为避免冤枉失分，请认真阅读）</h3>
+<ul>
+<li><h5 id="-oj-ac-">并不是大家光在OJ上AC一道题就能有一道题的分！</h5>
+</li>
+<li><h5 id="-">我们会依据大家提交上来的解题报告来进行评分！</h5>
+</li>
+<li><h5 id="-oj-ac-">包括对大家提交的代码进行查雷同和重新运行所有题目的测试数据（所以请注释文件输入输出和调试语句，与OJ上最终AC代码相同）</h5>
+</li>
+<li><h5 id="-">以及通过大家所写的解题报告，根据你对算法的叙述来考察你的理解和掌握来进行打分！</h5>
+</li>
+</ul>
+<hr>
+<h3 id="-">具体格式如下：</h3>
+<p><strong>提交解题报告的截止时间，请留意每个专题的Contests页面。</strong></p>
+<p>新建一个文件夹,以你的姓名+学号命名，如<code>方攀焱2012029230013</code>。</p>
+<p><img src="/images/article/administrator/758/2014042718194687310.png" alt="title"></p>
+<p>打开此文件夹后，将你的标程和题解放入相应题目代号为名的文件夹。</p>
+<p><img src="/images/article/administrator/758/2014042718195030911.png" alt="title"></p>
+<p>标程和题解都要以题号命名，如果图中<code>A.cpp</code>为标程，<code>A.doc</code>(或<code>A.txt</code>)为你自己写的题解。</p>
+<p><img src="/images/article/administrator/758/2014042718200088412.png" alt="title"></p>
+<p>最后将整个文件夹压缩为一个<code>zip</code>(或<code>rar</code>)文件，发到邮箱<a href="mailto: 449540179@qq.com"> 449540179@qq.com</a>。</p>
+<p><img src="/images/article/administrator/758/2014042718202105013.png" alt="title"></p></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2700" ng-bind="article.title" class="ng-binding">2016年电子科技大学ACM-ICPC暑假前集训计划及暑假集训队选拔方案</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/qscqesze/2700" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">1279</span> visited, create by
+    <a href="/#/user/center/qscqesze" ng-bind="article.ownerName" class="ng-binding">qscqesze</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">1 month ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><h4 id="-">暑假前集训开始报名啦!</h4>
+<p>有任何疑问欢迎加入UESTC－ACM－2016新人QQ群<code>432776324</code>提问！<br></p>
+<h3 id="-">报名方式</h3>
+<hr>
+<ol>
+<li>没有OJ账号的同学请先在有右上角注册OJ账号。<br></li>
+<li>登陆自己的账号后，组建一个以<code>自己姓名为队名</code>的Team(Team内只包含自己一人)。<br></li>
+<li>务必填写好自己的个人信息：姓名，学号，院系，年级，联系方式等等，Nickname请填写自己的真实姓名，<code>Motto一栏请填写自己的CF及TC账号</code>，详情见后文。<br></li>
+<li><a href="http://acm.uestc.edu.cn/#/contest/register/92">点击打开</a>，Team一栏输入自己的姓名，进行报名。<br></li>
+<li>报名不成功的将显示<code>Refused</code>, 请阅读报名方式之后重新报名。
+管理员将人工审核。<br></li>
+</ol>
+<h3 id="-br-">暑假前集训日程安排<br></h3>
+<p>地点: 清水河校区品学楼A201<br></p>
+<hr>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th class="text-center" rowspan="2" style="vertical-align:middle">专题</th>
+<th class="text-center" rowspan="2" style="vertical-align:middle">负责人</th>
+<th class="text-center" colspan="4">时间</th>
+<th class="text-center" rowspan="2" style="vertical-align:middle">讲座地点</th>
+</tr>
+<tr>
+<th class="text-center">开始</th>
+<th class="text-center">第一场讲座</th>
+<th class="text-center">第二场讲座</th>
+<th class="text-center">结束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center">数据结构</td>
+<td class="text-center">卿俊、陈嘉闽、蒋明飞、郭镇宇</td>
+<td class="text-center">2016-04-17</td>
+<td class="text-center">2016-04-17 14:30</td>
+<td class="text-center">2016-04-24 14:30</td>
+<td class="text-center">2016-04-30</td>
+<td class="text-center" rowspan="5" style="vertical-align:middle">清水河校区品学楼<br>A201</td>
+</tr>
+<tr>
+<td class="text-center">动态规划</td>
+<td class="text-center">沈柯、李政谕、李家琦</td>
+<td class="text-center">2016-05-01</td>
+<td class="text-center">2016-05-01 14:30</td>
+<td class="text-center">2016-05-08 14:30</td>
+<td class="text-center">2016-05-14</td>
+</tr>
+<tr>
+<td class="text-center">搜索与字符串</td>
+<td class="text-center">廖奇、陈霄豪、张悦田</td>
+<td class="text-center">2016-05-15</td>
+<td class="text-center">2016-05-15 14:30</td>
+<td class="text-center">2016-05-22 14:30</td>
+<td class="text-center">2016-05-28</td>
+</tr>
+<tr>
+<td class="text-center">数学</td>
+<td class="text-center">何柱、唐嗣尧、王昱人、韩世欣</td>
+<td class="text-center">2016-05-23</td>
+<td class="text-center">2016-05-29 14:30</td>
+<td class="text-center">2016-06-05 14:30</td>
+<td class="text-center">2016-06-11</td>
+</tr>
+<tr>
+<td class="text-center">图论</td>
+<td class="text-center">杨宇同、从乾昊、张冠斓</td>
+<td class="text-center">2016-06-12</td>
+<td class="text-center">2016-06-12 14:30</td>
+<td class="text-center">2016-06-19 14:30</td>
+<td class="text-center">2016-06-26</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>（实时更新中！）</strong></p>
+<h3 id="-">暑假前集训选拔标准</h3>
+<hr>
+<p>暑假前集训分数由以下几部分组成：</p>
+<ol>
+<li><a href="http://community.topcoder.com/tc">Topcoder</a>、<a href="http://codeforces.com/">Codeforces</a>加分</li>
+<li>校赛加分</li>
+<li>专题讲座考勤加分</li>
+<li>专题讲座作业加分</li>
+<li>队内赛加分</li>
+</ol>
+<p>具体记分方式如下：</p>
+<ol>
+<li>(选)<a href="http://community.topcoder.com/tc">Topcoder</a><br>
+首先要求至少参加<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-141-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>5</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1121" role="math" style="width: 0.637em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.521em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.46em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1122"><span class="mn" id="MathJax-Span-1123" style="font-family: STIXGeneral-Regular;">5</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>5</mn></math></span></span><script type="math/tex" id="MathJax-Element-141">5</script>场比赛，并且以第三高<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-142-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1124" role="math" style="width: 3.113em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.48em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.731em 1002.42em 2.941em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1125"><span class="mi" id="MathJax-Span-1126" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1127" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-1128" style="font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1129" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-1130" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-1131" style="font-family: STIXGeneral-Italic;">g</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.218em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi></math></span></span><script type="math/tex" id="MathJax-Element-142">rating</script>作为依据。记第三高<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-143-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi><mo>=</mo><mi>r</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1132" role="math" style="width: 5.072em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.093em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.731em 1004.09em 2.941em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1133"><span class="mi" id="MathJax-Span-1134" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1135" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-1136" style="font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1137" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-1138" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-1139" style="font-family: STIXGeneral-Italic;">g</span><span class="mo" id="MathJax-Span-1140" style="font-family: STIXGeneral-Regular; padding-left: 0.291em;">=</span><span class="mi" id="MathJax-Span-1141" style="font-family: STIXGeneral-Italic; padding-left: 0.291em;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.218em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi><mo>=</mo><mi>r</mi></math></span></span><script type="math/tex" id="MathJax-Element-143">rating=r</script><br>
+则得分为<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-144-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo movablelimits=&quot;true&quot; form=&quot;prefix&quot;>max</mo><mo stretchy=&quot;false&quot;>(</mo><mn>0</mn><mo>,</mo><mfrac><mrow><mi>r</mi><mo>&amp;#x2212;</mo><mn>900</mn></mrow><mn>80</mn></mfrac><msup><mo stretchy=&quot;false&quot;>)</mo><mn>2</mn></msup></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1142" role="math" style="width: 7.376em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.936em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.443em 1005.94em 3.113em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1143"><span class="mo" id="MathJax-Span-1144" style="font-family: STIXGeneral-Regular;">max</span><span class="mo" id="MathJax-Span-1145" style="font-family: STIXGeneral-Regular;">(</span><span class="mn" id="MathJax-Span-1146" style="font-family: STIXGeneral-Regular;">0</span><span class="mo" id="MathJax-Span-1147" style="font-family: STIXGeneral-Regular;">,</span><span class="mfrac" id="MathJax-Span-1148" style="padding-left: 0.176em;"><span style="display: inline-block; position: relative; width: 1.961em; height: 0px; margin-right: 0.118em; margin-left: 0.118em;"><span style="position: absolute; clip: rect(3.344em 1001.85em 4.15em -999.997em); top: -4.433em; left: 50%; margin-left: -0.919em;"><span class="mrow" id="MathJax-Span-1149"><span class="mi" id="MathJax-Span-1150" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-1151" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">−</span><span class="mn" id="MathJax-Span-1152" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">900</span></span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; clip: rect(3.344em 1000.69em 4.15em -999.997em); top: -3.569em; left: 50%; margin-left: -0.343em;"><span class="mn" id="MathJax-Span-1153" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">80</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; clip: rect(0.867em 1001.96em 1.27em -999.997em); top: -1.322em; left: 0.003em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0.003em; border-top: 1.3px solid; width: 1.961em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.097em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-1154"><span style="display: inline-block; position: relative; width: 0.752em; height: 0px;"><span style="position: absolute; clip: rect(3.113em 1000.29em 4.323em -999.997em); top: -3.972em; left: 0.003em;"><span class="mo" id="MathJax-Span-1155" style="font-family: STIXGeneral-Regular;">)</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; top: -4.317em; left: 0.349em;"><span class="mn" id="MathJax-Span-1156" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.568em; border-left: 0px solid; width: 0px; height: 1.789em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo movablelimits="true" form="prefix">max</mo><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mfrac><mrow><mi>r</mi><mo>−</mo><mn>900</mn></mrow><mn>80</mn></mfrac><msup><mo stretchy="false">)</mo><mn>2</mn></msup></math></span></span><script type="math/tex" id="MathJax-Element-144">\max(0, \frac{r-900}{80})^2</script>，其中除法为整除<br>
+例如<a href="http://community.topcoder.com/tc?module=MemberProfile&amp;cr=22866257">某熊孩子</a>共参加<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-145-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>96</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1157" role="math" style="width: 1.213em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.982em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.92em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1158"><span class="mn" id="MathJax-Span-1159" style="font-family: STIXGeneral-Regular;">96</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>96</mn></math></span></span><script type="math/tex" id="MathJax-Element-145">96</script>场，第三高<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-146-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1160" role="math" style="width: 3.113em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.48em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.731em 1002.42em 2.941em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1161"><span class="mi" id="MathJax-Span-1162" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1163" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-1164" style="font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1165" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-1166" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-1167" style="font-family: STIXGeneral-Italic;">g</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.218em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi></math></span></span><script type="math/tex" id="MathJax-Element-146">rating</script>为<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-147-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>2391</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1168" role="math" style="width: 2.537em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.019em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1001.9em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1169"><span class="mn" id="MathJax-Span-1170" style="font-family: STIXGeneral-Regular;">2391</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2391</mn></math></span></span><script type="math/tex" id="MathJax-Element-147">2391</script>，则其<a href="http://community.topcoder.com/tc">Topcoder</a>加分为<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-148-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>(</mo><mfrac><mrow><mn>2391</mn><mo>&amp;#x2212;</mo><mn>900</mn></mrow><mn>80</mn></mfrac><msup><mo stretchy=&quot;false&quot;>)</mo><mn>2</mn></msup><mo>=</mo><mn>324</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1171" role="math" style="width: 8.874em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.146em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.443em 1007.15em 3.113em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1172"><span class="mo" id="MathJax-Span-1173" style="font-family: STIXGeneral-Regular;">(</span><span class="mfrac" id="MathJax-Span-1174"><span style="display: inline-block; position: relative; width: 3.056em; height: 0px; margin-right: 0.118em; margin-left: 0.118em;"><span style="position: absolute; clip: rect(3.344em 1002.94em 4.15em -999.997em); top: -4.433em; left: 50%; margin-left: -1.495em;"><span class="mrow" id="MathJax-Span-1175"><span class="mn" id="MathJax-Span-1176" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2391</span><span class="mo" id="MathJax-Span-1177" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">−</span><span class="mn" id="MathJax-Span-1178" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">900</span></span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; clip: rect(3.344em 1000.69em 4.15em -999.997em); top: -3.569em; left: 50%; margin-left: -0.343em;"><span class="mn" id="MathJax-Span-1179" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">80</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; clip: rect(0.867em 1003.06em 1.27em -999.997em); top: -1.322em; left: 0.003em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0.003em; border-top: 1.3px solid; width: 3.056em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.097em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-1180"><span style="display: inline-block; position: relative; width: 0.752em; height: 0px;"><span style="position: absolute; clip: rect(3.113em 1000.29em 4.323em -999.997em); top: -3.972em; left: 0.003em;"><span class="mo" id="MathJax-Span-1181" style="font-family: STIXGeneral-Regular;">)</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; top: -4.317em; left: 0.349em;"><span class="mn" id="MathJax-Span-1182" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span></span></span><span class="mo" id="MathJax-Span-1183" style="font-family: STIXGeneral-Regular; padding-left: 0.291em;">=</span><span class="mn" id="MathJax-Span-1184" style="font-family: STIXGeneral-Regular; padding-left: 0.291em;">324</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.568em; border-left: 0px solid; width: 0px; height: 1.789em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mfrac><mrow><mn>2391</mn><mo>−</mo><mn>900</mn></mrow><mn>80</mn></mfrac><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mn>324</mn></math></span></span><script type="math/tex" id="MathJax-Element-148">(\frac{2391-900}{80})^2=324</script>分！！！</li>
+<li>(选)<a href="http://codeforces.com/">Codeforces</a><br>
+首先要求至少参加<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-149-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>5</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1185" role="math" style="width: 0.637em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.521em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.46em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1186"><span class="mn" id="MathJax-Span-1187" style="font-family: STIXGeneral-Regular;">5</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>5</mn></math></span></span><script type="math/tex" id="MathJax-Element-149">5</script>场比赛，并且以第三高<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-150-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1188" role="math" style="width: 3.113em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.48em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.731em 1002.42em 2.941em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1189"><span class="mi" id="MathJax-Span-1190" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1191" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-1192" style="font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1193" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-1194" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-1195" style="font-family: STIXGeneral-Italic;">g</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.218em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi></math></span></span><script type="math/tex" id="MathJax-Element-150">rating</script>作为依据。记第三高<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-151-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi><mo>=</mo><mi>r</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1196" role="math" style="width: 5.072em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.093em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.731em 1004.09em 2.941em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1197"><span class="mi" id="MathJax-Span-1198" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1199" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-1200" style="font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1201" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-1202" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-1203" style="font-family: STIXGeneral-Italic;">g</span><span class="mo" id="MathJax-Span-1204" style="font-family: STIXGeneral-Regular; padding-left: 0.291em;">=</span><span class="mi" id="MathJax-Span-1205" style="font-family: STIXGeneral-Italic; padding-left: 0.291em;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.218em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi><mo>=</mo><mi>r</mi></math></span></span><script type="math/tex" id="MathJax-Element-151">rating=r</script><br>
+则得分为<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-152-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo movablelimits=&quot;true&quot; form=&quot;prefix&quot;>max</mo><mo stretchy=&quot;false&quot;>(</mo><mn>0</mn><mo>,</mo><mfrac><mrow><mi>r</mi><mo>&amp;#x2212;</mo><mn>1200</mn></mrow><mn>80</mn></mfrac><msup><mo stretchy=&quot;false&quot;>)</mo><mn>2</mn></msup></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1206" role="math" style="width: 7.779em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.282em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.443em 1006.28em 3.113em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1207"><span class="mo" id="MathJax-Span-1208" style="font-family: STIXGeneral-Regular;">max</span><span class="mo" id="MathJax-Span-1209" style="font-family: STIXGeneral-Regular;">(</span><span class="mn" id="MathJax-Span-1210" style="font-family: STIXGeneral-Regular;">0</span><span class="mo" id="MathJax-Span-1211" style="font-family: STIXGeneral-Regular;">,</span><span class="mfrac" id="MathJax-Span-1212" style="padding-left: 0.176em;"><span style="display: inline-block; position: relative; width: 2.307em; height: 0px; margin-right: 0.118em; margin-left: 0.118em;"><span style="position: absolute; clip: rect(3.344em 1002.19em 4.15em -999.997em); top: -4.375em; left: 50%; margin-left: -1.092em;"><span class="mrow" id="MathJax-Span-1213"><span class="mi" id="MathJax-Span-1214" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-1215" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">−</span><span class="mn" id="MathJax-Span-1216" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1200</span></span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; clip: rect(3.344em 1000.69em 4.15em -999.997em); top: -3.569em; left: 50%; margin-left: -0.343em;"><span class="mn" id="MathJax-Span-1217" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">80</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; clip: rect(0.867em 1002.31em 1.27em -999.997em); top: -1.322em; left: 0.003em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0.003em; border-top: 1.3px solid; width: 2.307em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.097em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-1218"><span style="display: inline-block; position: relative; width: 0.752em; height: 0px;"><span style="position: absolute; clip: rect(3.113em 1000.29em 4.323em -999.997em); top: -3.972em; left: 0.003em;"><span class="mo" id="MathJax-Span-1219" style="font-family: STIXGeneral-Regular;">)</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; top: -4.317em; left: 0.349em;"><span class="mn" id="MathJax-Span-1220" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.568em; border-left: 0px solid; width: 0px; height: 1.789em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo movablelimits="true" form="prefix">max</mo><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mfrac><mrow><mi>r</mi><mo>−</mo><mn>1200</mn></mrow><mn>80</mn></mfrac><msup><mo stretchy="false">)</mo><mn>2</mn></msup></math></span></span><script type="math/tex" id="MathJax-Element-152">\max(0,\frac{r-1200}{80})^2</script>，其中除法为整除<br>
+例如<a href="http://codeforces.com/profile/kennethsnow">某熊孩子</a>共参加<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-153-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>84</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1221" role="math" style="width: 1.213em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.982em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.98em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1222"><span class="mn" id="MathJax-Span-1223" style="font-family: STIXGeneral-Regular;">84</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>84</mn></math></span></span><script type="math/tex" id="MathJax-Element-153">84</script>场，第三高<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-154-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1224" role="math" style="width: 3.113em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.48em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.731em 1002.42em 2.941em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1225"><span class="mi" id="MathJax-Span-1226" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1227" style="font-family: STIXGeneral-Italic;">a</span><span class="mi" id="MathJax-Span-1228" style="font-family: STIXGeneral-Italic;">t<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-1229" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-1230" style="font-family: STIXGeneral-Italic;">n</span><span class="mi" id="MathJax-Span-1231" style="font-family: STIXGeneral-Italic;">g</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.354em; border-left: 0px solid; width: 0px; height: 1.218em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi></math></span></span><script type="math/tex" id="MathJax-Element-154">rating</script>为<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-155-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>2359</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1232" role="math" style="width: 2.537em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.019em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1001.96em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1233"><span class="mn" id="MathJax-Span-1234" style="font-family: STIXGeneral-Regular;">2359</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2359</mn></math></span></span><script type="math/tex" id="MathJax-Element-155">2359</script>，则其<a href="http://codeforces.com/">Codeforces</a>加分为<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-156-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>(</mo><mfrac><mrow><mn>2359</mn><mo>&amp;#x2212;</mo><mn>1200</mn></mrow><mn>80</mn></mfrac><msup><mo stretchy=&quot;false&quot;>)</mo><mn>2</mn></msup><mo>=</mo><mn>196</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1235" role="math" style="width: 9.392em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.549em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.443em 1007.49em 3.113em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1236"><span class="mo" id="MathJax-Span-1237" style="font-family: STIXGeneral-Regular;">(</span><span class="mfrac" id="MathJax-Span-1238"><span style="display: inline-block; position: relative; width: 3.459em; height: 0px; margin-right: 0.118em; margin-left: 0.118em;"><span style="position: absolute; clip: rect(3.344em 1003.29em 4.15em -999.997em); top: -4.433em; left: 50%; margin-left: -1.668em;"><span class="mrow" id="MathJax-Span-1239"><span class="mn" id="MathJax-Span-1240" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2359</span><span class="mo" id="MathJax-Span-1241" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">−</span><span class="mn" id="MathJax-Span-1242" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1200</span></span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; clip: rect(3.344em 1000.69em 4.15em -999.997em); top: -3.569em; left: 50%; margin-left: -0.343em;"><span class="mn" id="MathJax-Span-1243" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">80</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; clip: rect(0.867em 1003.46em 1.27em -999.997em); top: -1.322em; left: 0.003em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0.003em; border-top: 1.3px solid; width: 3.459em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.097em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-1244"><span style="display: inline-block; position: relative; width: 0.752em; height: 0px;"><span style="position: absolute; clip: rect(3.113em 1000.29em 4.323em -999.997em); top: -3.972em; left: 0.003em;"><span class="mo" id="MathJax-Span-1245" style="font-family: STIXGeneral-Regular;">)</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span><span style="position: absolute; top: -4.317em; left: 0.349em;"><span class="mn" id="MathJax-Span-1246" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 3.978em;"></span></span></span></span><span class="mo" id="MathJax-Span-1247" style="font-family: STIXGeneral-Regular; padding-left: 0.291em;">=</span><span class="mn" id="MathJax-Span-1248" style="font-family: STIXGeneral-Regular; padding-left: 0.291em;">196</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.568em; border-left: 0px solid; width: 0px; height: 1.789em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mfrac><mrow><mn>2359</mn><mo>−</mo><mn>1200</mn></mrow><mn>80</mn></mfrac><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mn>196</mn></math></span></span><script type="math/tex" id="MathJax-Element-156">(\frac{2359-1200}{80})^2=196</script>分！！！</li>
+<li>校赛加分<br><ul>
+<li>特等奖：<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-157-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>21</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1249" role="math" style="width: 1.213em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.982em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.87em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1250"><span class="mn" id="MathJax-Span-1251" style="font-family: STIXGeneral-Regular;">21</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>21</mn></math></span></span><script type="math/tex" id="MathJax-Element-157">21</script>分</li>
+<li>一等奖：<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-158-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>13</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1252" role="math" style="width: 1.213em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.982em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.92em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1253"><span class="mn" id="MathJax-Span-1254" style="font-family: STIXGeneral-Regular;">13</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>13</mn></math></span></span><script type="math/tex" id="MathJax-Element-158">13</script>分</li>
+<li>二等奖：<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-159-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>8</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1255" role="math" style="width: 0.637em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.521em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.46em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1256"><span class="mn" id="MathJax-Span-1257" style="font-family: STIXGeneral-Regular;">8</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>8</mn></math></span></span><script type="math/tex" id="MathJax-Element-159">8</script>分</li>
+<li>三等奖：<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-160-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>5</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1258" role="math" style="width: 0.637em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.521em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.46em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1259"><span class="mn" id="MathJax-Span-1260" style="font-family: STIXGeneral-Regular;">5</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>5</mn></math></span></span><script type="math/tex" id="MathJax-Element-160">5</script>分</li>
+</ul>
+</li>
+<li>专题讲座考勤<br>
+每个专题有两场讲座，每场记<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-161-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>2</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1261" role="math" style="width: 0.637em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.521em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.52em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1262"><span class="mn" id="MathJax-Span-1263" style="font-family: STIXGeneral-Regular;">2</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></span></span><script type="math/tex" id="MathJax-Element-161">2</script>分！</li>
+<li>专题讲座作业<br>
+每个专题将会布置<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-162-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>10</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1264" role="math" style="width: 1.213em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.982em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.98em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1265"><span class="mn" id="MathJax-Span-1266" style="font-family: STIXGeneral-Regular;">10</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>10</mn></math></span></span><script type="math/tex" id="MathJax-Element-162">10</script>道左右的作业供大家课后完成，完成后要交解题报告(电子版)。各专题负责人将根据大家的完成情况打分。每个专题满分<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-163-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>8</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1267" role="math" style="width: 0.637em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.521em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.46em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1268"><span class="mn" id="MathJax-Span-1269" style="font-family: STIXGeneral-Regular;">8</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>8</mn></math></span></span><script type="math/tex" id="MathJax-Element-163">8</script>分。</li>
+<li>队内赛<br>
+从第一到第四个专题，每个专题对应的第二周的周六（即：<code>4.30</code>、<code>5.07</code>、<code>5.21</code>、<code>6.04</code>）下午<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-164-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>12</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1270" role="math" style="width: 1.213em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.982em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.98em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1271"><span class="mn" id="MathJax-Span-1272" style="font-family: STIXGeneral-Regular;">12</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>12</mn></math></span></span><script type="math/tex" id="MathJax-Element-164">12</script>点到<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-165-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>17</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1273" role="math" style="width: 1.213em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.982em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.92em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1274"><span class="mn" id="MathJax-Span-1275" style="font-family: STIXGeneral-Regular;">17</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>17</mn></math></span></span><script type="math/tex" id="MathJax-Element-165">17</script>点将进行一场队内赛，<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-166-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x6BCF;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x573A;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x961F;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x5185;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x8D5B;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x7684;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x5F97;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x5206;</mo></mrow><mo>=</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo stretchy=&quot;false&quot;>(</mo><mfrac><mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x60A8;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x7684;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x8FC7;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x9898;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x6570;</mo></mrow><mo>&amp;#x00D7;</mo><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x96BE;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x5EA6;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x7CFB;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x6570;</mo></mrow></mrow><mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x65B0;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x4EBA;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x7B2C;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x4E00;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x4E8C;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x540D;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x4E2D;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x6700;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x4F4E;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x8FC7;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x9898;</mo></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>&amp;#x6570;</mo></mrow></mrow></mfrac></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1276" role="math" style="width: 22.584em; display: inline-block;"><span style="display: inline-block; position: relative; width: 18.206em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.213em 1018.21em 3.344em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1277"><span class="texatom" id="MathJax-Span-1278"><span class="mrow" id="MathJax-Span-1279"><span class="mo" id="MathJax-Span-1280"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">每</span></span></span></span><span class="texatom" id="MathJax-Span-1281"><span class="mrow" id="MathJax-Span-1282"><span class="mo" id="MathJax-Span-1283"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">场</span></span></span></span><span class="texatom" id="MathJax-Span-1284"><span class="mrow" id="MathJax-Span-1285"><span class="mo" id="MathJax-Span-1286"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">队</span></span></span></span><span class="texatom" id="MathJax-Span-1287"><span class="mrow" id="MathJax-Span-1288"><span class="mo" id="MathJax-Span-1289"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">内</span></span></span></span><span class="texatom" id="MathJax-Span-1290"><span class="mrow" id="MathJax-Span-1291"><span class="mo" id="MathJax-Span-1292"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">赛</span></span></span></span><span class="texatom" id="MathJax-Span-1293"><span class="mrow" id="MathJax-Span-1294"><span class="mo" id="MathJax-Span-1295"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">的</span></span></span></span><span class="texatom" id="MathJax-Span-1296"><span class="mrow" id="MathJax-Span-1297"><span class="mo" id="MathJax-Span-1298"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">得</span></span></span></span><span class="texatom" id="MathJax-Span-1299"><span class="mrow" id="MathJax-Span-1300"><span class="mo" id="MathJax-Span-1301"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">分</span></span></span></span><span class="mo" id="MathJax-Span-1302" style="font-family: STIXGeneral-Regular; padding-left: 0.291em;">=</span><span class="mi" id="MathJax-Span-1303" style="font-family: STIXGeneral-Italic; padding-left: 0.291em;">m</span><span class="mi" id="MathJax-Span-1304" style="font-family: STIXGeneral-Italic;">i</span><span class="mi" id="MathJax-Span-1305" style="font-family: STIXGeneral-Italic;">n</span><span class="mo" id="MathJax-Span-1306" style="font-family: STIXGeneral-Regular;">(</span><span class="mfrac" id="MathJax-Span-1307"><span style="display: inline-block; position: relative; width: 8.413em; height: 0px; margin-right: 0.118em; margin-left: 0.118em;"><span style="position: absolute; clip: rect(1.673em 1006.68em 2.71em -999.997em); top: -2.993em; left: 50%; margin-left: -3.338em;"><span class="mrow" id="MathJax-Span-1308"><span class="texatom" id="MathJax-Span-1309"><span class="mrow" id="MathJax-Span-1310"><span class="mo" id="MathJax-Span-1311" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">您</span></span></span></span><span class="texatom" id="MathJax-Span-1312"><span class="mrow" id="MathJax-Span-1313"><span class="mo" id="MathJax-Span-1314" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">的</span></span></span></span><span class="texatom" id="MathJax-Span-1315"><span class="mrow" id="MathJax-Span-1316"><span class="mo" id="MathJax-Span-1317" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">过</span></span></span></span><span class="texatom" id="MathJax-Span-1318"><span class="mrow" id="MathJax-Span-1319"><span class="mo" id="MathJax-Span-1320" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">题</span></span></span></span><span class="texatom" id="MathJax-Span-1321"><span class="mrow" id="MathJax-Span-1322"><span class="mo" id="MathJax-Span-1323" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">数</span></span></span></span><span class="mo" id="MathJax-Span-1324" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">×</span><span class="texatom" id="MathJax-Span-1325"><span class="mrow" id="MathJax-Span-1326"><span class="mo" id="MathJax-Span-1327" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">难</span></span></span></span><span class="texatom" id="MathJax-Span-1328"><span class="mrow" id="MathJax-Span-1329"><span class="mo" id="MathJax-Span-1330" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">度</span></span></span></span><span class="texatom" id="MathJax-Span-1331"><span class="mrow" id="MathJax-Span-1332"><span class="mo" id="MathJax-Span-1333" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">系</span></span></span></span><span class="texatom" id="MathJax-Span-1334"><span class="mrow" id="MathJax-Span-1335"><span class="mo" id="MathJax-Span-1336" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">数</span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.422em;"></span></span><span style="position: absolute; clip: rect(1.616em 1008.3em 2.653em -999.997em); top: -1.898em; left: 50%; margin-left: -4.145em;"><span class="mrow" id="MathJax-Span-1337"><span class="texatom" id="MathJax-Span-1338"><span class="mrow" id="MathJax-Span-1339"><span class="mo" id="MathJax-Span-1340" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">新</span></span></span></span><span class="texatom" id="MathJax-Span-1341"><span class="mrow" id="MathJax-Span-1342"><span class="mo" id="MathJax-Span-1343" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">人</span></span></span></span><span class="texatom" id="MathJax-Span-1344"><span class="mrow" id="MathJax-Span-1345"><span class="mo" id="MathJax-Span-1346" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">第</span></span></span></span><span class="texatom" id="MathJax-Span-1347"><span class="mrow" id="MathJax-Span-1348"><span class="mo" id="MathJax-Span-1349" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">一</span></span></span></span><span class="texatom" id="MathJax-Span-1350"><span class="mrow" id="MathJax-Span-1351"><span class="mo" id="MathJax-Span-1352" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">二</span></span></span></span><span class="texatom" id="MathJax-Span-1353"><span class="mrow" id="MathJax-Span-1354"><span class="mo" id="MathJax-Span-1355" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">名</span></span></span></span><span class="texatom" id="MathJax-Span-1356"><span class="mrow" id="MathJax-Span-1357"><span class="mo" id="MathJax-Span-1358" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">中</span></span></span></span><span class="texatom" id="MathJax-Span-1359"><span class="mrow" id="MathJax-Span-1360"><span class="mo" id="MathJax-Span-1361" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">最</span></span></span></span><span class="texatom" id="MathJax-Span-1362"><span class="mrow" id="MathJax-Span-1363"><span class="mo" id="MathJax-Span-1364" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">低</span></span></span></span><span class="texatom" id="MathJax-Span-1365"><span class="mrow" id="MathJax-Span-1366"><span class="mo" id="MathJax-Span-1367" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">过</span></span></span></span><span class="texatom" id="MathJax-Span-1368"><span class="mrow" id="MathJax-Span-1369"><span class="mo" id="MathJax-Span-1370" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">题</span></span></span></span><span class="texatom" id="MathJax-Span-1371"><span class="mrow" id="MathJax-Span-1372"><span class="mo" id="MathJax-Span-1373" style="font-size: 70.7%;"><span style="font-family: STIXGeneral, &quot;Arial Unicode MS&quot;, serif; font-size: 81%; font-style: normal; font-weight: normal;">数</span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.365em;"></span></span><span style="position: absolute; clip: rect(0.867em 1008.41em 1.27em -999.997em); top: -1.322em; left: 0.003em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0.003em; border-top: 1.3px solid; width: 8.413em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.097em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.854em; border-left: 0px solid; width: 0px; height: 2.289em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mo>每</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>场</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>队</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>内</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>赛</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>的</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>得</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>分</mo></mrow><mo>=</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo stretchy="false">(</mo><mfrac><mrow><mrow class="MJX-TeXAtom-ORD"><mo>您</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>的</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>过</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>题</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>数</mo></mrow><mo>×</mo><mrow class="MJX-TeXAtom-ORD"><mo>难</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>度</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>系</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>数</mo></mrow></mrow><mrow><mrow class="MJX-TeXAtom-ORD"><mo>新</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>人</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>第</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>一</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>二</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>名</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>中</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>最</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>低</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>过</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>题</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo>数</mo></mrow></mrow></mfrac></math></span></span><script type="math/tex" id="MathJax-Element-166">每场队内赛的得分=min(\frac{您的过题数\times难度系数}{新人第一二名中最低过题数}</script>,8)。难度系数将在赛后，根据大家的完成情况给出。</li>
+</ol>
+<p>每个人的最终得分等于以上<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-167-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>6</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1374" role="math" style="width: 0.637em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.521em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.46em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1375"><span class="mn" id="MathJax-Span-1376" style="font-family: STIXGeneral-Regular;">6</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>6</mn></math></span></span><script type="math/tex" id="MathJax-Element-167">6</script>部分分数之和乘以系数<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-168-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>k</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1377" role="math" style="width: 0.579em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.464em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.46em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1378"><span class="mi" id="MathJax-Span-1379" style="font-family: STIXGeneral-Italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi></math></span></span><script type="math/tex" id="MathJax-Element-168">k</script>（大一<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-169-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>1.5</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1380" role="math" style="width: 1.616em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.27em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1001.21em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1381"><span class="mn" id="MathJax-Span-1382" style="font-family: STIXGeneral-Regular;">1.5</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1.5</mn></math></span></span><script type="math/tex" id="MathJax-Element-169">1.5</script>，大二<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-170-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>1.25</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1383" role="math" style="width: 2.192em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.731em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1001.67em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1384"><span class="mn" id="MathJax-Span-1385" style="font-family: STIXGeneral-Regular;">1.25</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1.25</mn></math></span></span><script type="math/tex" id="MathJax-Element-170">1.25</script>，大三及以上<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-171-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>1.0</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1386" role="math" style="width: 1.616em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.27em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1001.27em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1387"><span class="mn" id="MathJax-Span-1388" style="font-family: STIXGeneral-Regular;">1.0</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1.0</mn></math></span></span><script type="math/tex" id="MathJax-Element-171">1.0</script>）</p>
+<p>以上为新人的记分规则，现役集训队队员同样将参与排名，记分方式稍有不同，具体如下：</p>
+<ol>
+<li><a href="http://community.topcoder.com/tc">Topcoder</a>和<a href="http://codeforces.com/">Codeforces</a>基准线分别为<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-172-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>1200</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1389" role="math" style="width: 2.537em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.019em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1002.02em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1390"><span class="mn" id="MathJax-Span-1391" style="font-family: STIXGeneral-Regular;">1200</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1200</mn></math></span></span><script type="math/tex" id="MathJax-Element-172">1200</script>和<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-173-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>1900</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1392" role="math" style="width: 2.537em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.019em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1002.02em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1393"><span class="mn" id="MathJax-Span-1394" style="font-family: STIXGeneral-Regular;">1900</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1900</mn></math></span></span><script type="math/tex" id="MathJax-Element-173">1900</script></li>
+<li>不计考勤分</li>
+<li>负责专题讲座的同学该专题记满分，其他队员照常</li>
+<li>集训队队员无论大几，系数<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-174-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>k</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1395" role="math" style="width: 0.579em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.464em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1000.46em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1396"><span class="mi" id="MathJax-Span-1397" style="font-family: STIXGeneral-Italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi></math></span></span><script type="math/tex" id="MathJax-Element-174">k</script>均按照<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-175-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>1.0</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1398" role="math" style="width: 1.616em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.27em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.673em 1001.27em 2.71em -999.997em); top: -2.532em; left: 0.003em;"><span class="mrow" id="MathJax-Span-1399"><span class="mn" id="MathJax-Span-1400" style="font-family: STIXGeneral-Regular;">1.0</span></span><span style="display: inline-block; width: 0px; height: 2.537em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1.0</mn></math></span></span><script type="math/tex" id="MathJax-Element-175">1.0</script>计算</li>
+</ol>
+<p>除以上四点不同之外，其余均与新人相同。</p></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2699" ng-bind="article.title" class="ng-binding">第十四届电子科技大学程序设计竞赛暨西南地区高校邀请赛决赛获奖名单</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/xwind/2699" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">856</span> visited, create by
+    <a href="/#/user/center/xwind" ng-bind="article.ownerName" class="ng-binding">xwind</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">6 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><h3 id="-">特等奖</h3>
+<pre><span class="pun">吴昊泰</span><span class="pln"> </span><span class="pun">彭柏文</span><span class="pln"> </span><span class="pun">陈岳航</span><span class="pln">
+</span><span class="pun">林维博</span><span class="pln"> </span><span class="pun">王晔涛</span><span class="pln"> </span><span class="pun">强顺亮</span></pre><h3 id="-">一等奖</h3>
+<pre><span class="pun">朱昶宇</span><span class="pln"> </span><span class="pun">杨景钦</span><span class="pln"> </span><span class="pun">段晓桤</span><span class="pln">
+</span><span class="pun">唐宇豪</span><span class="pln"> </span><span class="pun">刘尔之</span><span class="pln"> </span><span class="pun">林朴心</span><span class="pln">
+</span><span class="pun">吴东学</span><span class="pln"> </span><span class="pun">黎宏基</span><span class="pln"> </span><span class="pun">朱洽超</span><span class="pln">
+</span><span class="pun">郭镇宇</span><span class="pln"> </span><span class="pun">唐嗣尧</span><span class="pln"> </span><span class="pun">李闻达</span><span class="pln">
+</span><span class="pun">赵赣</span><span class="pln"> </span><span class="pun">林伟平</span><span class="pln"> </span><span class="pun">张曦</span><span class="pln">
+</span><span class="pun">从乾昊</span><span class="pln"> </span><span class="pun">徐浩</span><span class="pln"> </span><span class="pun">蒋明飞</span><span class="pln">
+</span><span class="pun">潘缘</span><span class="pln"> </span><span class="pun">齐聪</span><span class="pln"> </span><span class="pun">付梓焱</span><span class="pln">
+</span><span class="pun">杨宇同</span><span class="pln"> </span><span class="pun">张悦田</span><span class="pln"> </span><span class="pun">廖奇</span><span class="pln">
+</span><span class="pun">吕佳宪</span><span class="pln"> </span><span class="pun">耿铭阳</span><span class="pln"> </span><span class="pun">李锟</span><span class="pln">
+</span><span class="pun">郑超超</span><span class="pln"> </span><span class="pun">方攀焱</span><span class="pln"> </span><span class="pun">姚智瀚</span><span class="pln">
+</span><span class="pun">李洋阳</span><span class="pln"> </span><span class="pun">李佶骏</span><span class="pln"> </span><span class="pun">唐灿</span><span class="pln">
+</span><span class="pun">代立轩</span><span class="pln"> </span><span class="pun">邓广</span><span class="pln"> </span><span class="pun">郑辉</span><span class="pln">
+</span><span class="pun">杨永祎</span><span class="pln"> </span><span class="pun">刘宸睿</span><span class="pln"> </span><span class="pun">杨善</span><span class="pln">
+</span><span class="pun">陈讯</span><span class="pln"> </span><span class="pun">刘遇时</span><span class="pln"> </span><span class="pun">彭润宇</span><span class="pln">
+</span><span class="pun">卿俊</span><span class="pln"> </span><span class="pun">沈柯</span><span class="pln"> </span><span class="pun">陈霄豪</span><span class="pln">
+</span><span class="pun">韩世欣</span><span class="pln"> </span><span class="pun">陈鑫</span><span class="pln"> </span><span class="pun">万笛文</span><span class="pln">
+</span><span class="pun">陈光箭</span><span class="pln"> </span><span class="pun">王晨</span><span class="pln"> </span><span class="pun">孟文秀</span><span class="pln">
+</span><span class="pun">李亿渊</span><span class="pln"> </span><span class="pun">杨帅</span><span class="pln"> </span><span class="pun">陈鹏</span></pre><h3 id="-">二等奖</h3>
+<pre><span class="pun">吴逸峰</span><span class="pln"> </span><span class="pun">任世卿</span><span class="pln"> </span><span class="pun">何友麒</span><span class="pln">
+</span><span class="pun">潘星霖</span><span class="pln"> </span><span class="pun">谭胜松</span><span class="pln"> </span><span class="pun">周昊</span><span class="pln">
+</span><span class="pun">翟明书</span><span class="pln"> </span><span class="pun">郭睿涵</span><span class="pln"> </span><span class="pun">曹熠洲</span><span class="pln">
+</span><span class="pun">周璟</span><span class="pln"> </span><span class="pun">罗君宇</span><span class="pln"> </span><span class="pun">夏雨杰</span><span class="pln">
+</span><span class="pun">文欣</span><span class="pln"> </span><span class="pun">陈啸宇</span><span class="pln"> </span><span class="pun">唐俊</span><span class="pln">
+</span><span class="pun">忻倚德</span><span class="pln"> </span><span class="pun">王昱人</span><span class="pln"> </span><span class="pun">李政谕</span><span class="pln">
+</span><span class="pun">陈嘉闽</span><span class="pln"> </span><span class="pun">李家琦</span><span class="pln"> </span><span class="pun">张冠斓</span><span class="pln">
+</span><span class="pun">渠吉超</span><span class="pln"> </span><span class="pun">颜吉强</span><span class="pln"> </span><span class="pun">曹衷珩</span><span class="pln">
+</span><span class="pun">林昱同</span><span class="pln"> </span><span class="pun">杨雅儒</span><span class="pln"> </span><span class="pun">曾祥瑞</span><span class="pln">
+</span><span class="pun">张基</span><span class="pln"> </span><span class="pun">安健侨</span><span class="pln"> </span><span class="pun">杨巍</span><span class="pln">
+</span><span class="pun">程宇轩</span><span class="pln"> </span><span class="pun">汪泽宇</span><span class="pln"> </span><span class="pun">孙宏源</span><span class="pln">
+</span><span class="pun">束晗涛</span><span class="pln"> </span><span class="pun">蒋毅博</span><span class="pln"> </span><span class="pun">黄孝炜</span><span class="pln">
+</span><span class="pun">曾一欣</span><span class="pln"> </span><span class="pun">林可</span><span class="pln"> </span><span class="pun">贺情怡</span><span class="pln">
+</span><span class="pun">陈顺</span><span class="pln"> </span><span class="pun">刘天宇</span><span class="pln"> </span><span class="pun">吴俊宇</span><span class="pln">
+</span><span class="pun">戴欣</span><span class="pln">
+</span><span class="pun">王冬</span><span class="pln"> </span><span class="pun">朱炜杰</span><span class="pln">
+</span><span class="pun">吴海平</span><span class="pln"> </span><span class="pun">李云畅</span><span class="pln"> </span><span class="pun">李楚鸣</span><span class="pln">
+</span><span class="pun">刘逸隽</span><span class="pln"> </span><span class="pun">李长昊</span><span class="pln"> </span><span class="pun">许欢</span><span class="pln">
+</span><span class="pun">陈舜禹</span><span class="pln"> </span><span class="pun">杨思琦</span><span class="pln"> </span><span class="pun">孙英宁</span><span class="pln">
+</span><span class="pun">李佳骏</span><span class="pln"> </span><span class="pun">刘沛</span><span class="pln"> </span><span class="pun">王磊</span><span class="pln">
+</span><span class="pun">吴志瑜</span><span class="pln">
+</span><span class="pun">张宇宁</span><span class="pln"> </span><span class="pun">陈智</span><span class="pln"> </span><span class="pun">赵卓婵</span><span class="pln">    
+</span><span class="pun">丁涛</span><span class="pln"> </span><span class="pun">张晓雨</span><span class="pln"> </span><span class="pun">方畋钦</span><span class="pln">
+</span><span class="pun">徐智林</span><span class="pln"> </span><span class="pun">杨涛</span><span class="pln"> </span><span class="pun">曾援晰</span><span class="pln">
+</span><span class="pun">张威</span><span class="pln"> </span><span class="pun">黄宇霄</span><span class="pln"> </span><span class="pun">梅鑫雨</span><span class="pln">
+</span><span class="pun">唐律</span><span class="pln"> </span><span class="pun">李旺竹</span><span class="pln"> </span><span class="pun">杜衡</span><span class="pln">
+</span><span class="pun">王亦佳</span><span class="pln"> </span><span class="pun">邱之岳</span><span class="pln"> </span><span class="pun">陈芳</span><span class="pln">
+</span><span class="pun">罗欣晨</span><span class="pln"> </span><span class="pun">刘俊成</span><span class="pln"> </span><span class="pun">赵杨</span><span class="pln">
+</span><span class="pun">张宇翔</span><span class="pln"> </span><span class="pun">张思宇</span><span class="pln"> </span><span class="pun">李耀</span><span class="pln">
+</span><span class="pun">高健扬</span><span class="pln"> </span><span class="pun">刘书含</span><span class="pln"> </span><span class="pun">张若琦</span><span class="pln">
+</span><span class="pun">曾彦程</span><span class="pln"> </span><span class="pun">祝暾</span><span class="pln"> </span><span class="pun">陈文卓</span><span class="pln">
+</span><span class="pun">王焯</span><span class="pln"> </span><span class="pun">蒋明昊</span><span class="pln"> </span><span class="pun">周雨龙</span></pre><h3 id="-">三等奖</h3>
+<pre><span class="pun">巫昆仑</span><span class="pln"> </span><span class="pun">李镭</span><span class="pln">
+</span><span class="pun">陆文韬</span><span class="pln"> </span><span class="pun">林驰宇</span><span class="pln"> </span><span class="pun">苏惠源</span><span class="pln">
+</span><span class="pun">王鉴宇</span><span class="pln"> </span><span class="pun">杨者</span><span class="pln"> </span><span class="pun">盘昊</span><span class="pln">
+</span><span class="pun">秦义茼</span><span class="pln"> </span><span class="pun">钱凯桦</span><span class="pln"> </span><span class="pun">吴日晖</span><span class="pln">
+</span><span class="pun">张芷萁</span><span class="pln"> </span><span class="pun">郑耀彦</span><span class="pln"> </span><span class="pun">丁冬临</span><span class="pln">
+</span><span class="pun">杨顺丰</span><span class="pln"> </span><span class="pun">严真乐</span><span class="pln"> </span><span class="pun">王润文</span><span class="pln">
+</span><span class="pun">颜志敏</span><span class="pln"> </span><span class="pun">陈嘉麒</span><span class="pln"> </span><span class="pun">杨刚</span><span class="pln">
+</span><span class="pun">吴梓柯</span><span class="pln"> </span><span class="pun">冯书翰</span><span class="pln">
+</span><span class="pun">王子和</span><span class="pln"> </span><span class="pun">唐浩桐</span><span class="pln"> </span><span class="pun">陈文杰</span><span class="pln">
+</span><span class="pun">黄頔</span><span class="pln"> </span><span class="pun">郑文韬</span><span class="pln"> </span><span class="pun">彭一丰</span><span class="pln">
+</span><span class="pun">方徐靖华</span><span class="pln"> </span><span class="pun">钟望</span><span class="pln"> </span><span class="pun">李双琪</span><span class="pln">
+</span><span class="pun">杜昊</span><span class="pln"> </span><span class="pun">翁亦旸</span><span class="pln"> </span><span class="pun">曹紫光</span><span class="pln">
+</span><span class="pun">王东凯</span><span class="pln">
+</span><span class="pun">袁曦焜</span><span class="pln"> </span><span class="pun">杨明鑫</span><span class="pln"> </span><span class="pun">寇寅</span><span class="pln">
+</span><span class="pun">胡程炜</span><span class="pln"> </span><span class="pun">王金宇</span><span class="pln"> </span><span class="pun">曹子末</span><span class="pln">
+</span><span class="pun">潘志豪</span><span class="pln"> </span><span class="pun">杨杰</span><span class="pln"> </span><span class="pun">李成珂</span><span class="pln">
+</span><span class="pun">贺骁武</span><span class="pln"> </span><span class="pun">晋嘉睿</span><span class="pln"> </span><span class="pun">文哲宇</span><span class="pln">
+</span><span class="pun">姜智豪</span><span class="pln"> </span><span class="pun">张骥鹏</span><span class="pln"> </span><span class="pun">张三星</span><span class="pln">
+</span><span class="pun">岳涛涛</span><span class="pln"> </span><span class="pun">胡明阳</span><span class="pln"> </span><span class="pun">徐涵泊</span><span class="pln">
+</span><span class="pun">李涛</span><span class="pln"> </span><span class="pun">刘迪</span><span class="pln"> </span><span class="pun">吕金帅</span><span class="pln">
+</span><span class="pun">胡建</span><span class="pln"> </span><span class="pun">王驰</span><span class="pln"> </span><span class="pun">朱吴帅</span><span class="pln">
+</span><span class="pun">丁汐杰</span><span class="pln"> </span><span class="pun">李聪辉</span><span class="pln"> </span><span class="pun">刘燕翀</span><span class="pln">
+</span><span class="pun">秦绍轩</span><span class="pln"> </span><span class="pun">朱元朝</span><span class="pln"> </span><span class="pun">吴成芳</span><span class="pln">
+</span><span class="pun">鲜槟丞</span><span class="pln"> </span><span class="pun">陈业</span><span class="pln"> </span><span class="pun">周易强</span><span class="pln">
+</span><span class="pun">陶然</span><span class="pln"> </span><span class="pun">王巍凯</span><span class="pln"> </span><span class="pun">张东平</span><span class="pln">
+</span><span class="pun">雷述鑫</span><span class="pln"> </span><span class="pun">罗一铭</span><span class="pln"> </span><span class="pun">刘力铭</span><span class="pln">
+</span><span class="pun">陈斐童</span><span class="pln"> </span><span class="pun">周家豪</span><span class="pln"> </span><span class="pun">张寒</span><span class="pln">
+</span><span class="pun">邓昱</span><span class="pln"> </span><span class="pun">杨佳闻</span><span class="pln"> </span><span class="pun">庞坤</span><span class="pln">
+</span><span class="pun">李希文</span><span class="pln"> </span><span class="pun">王飞智</span><span class="pln"> </span><span class="pun">尹帅辉</span><span class="pln">
+</span><span class="pun">彭斌</span><span class="pln"> </span><span class="pun">余健</span><span class="pln"> </span><span class="pun">万思敏</span><span class="pln">
+</span><span class="pun">曹宇翔</span><span class="pln"> </span><span class="pun">杜心远</span><span class="pln"> </span><span class="pun">梁宇成</span><span class="pln">
+</span><span class="pun">安子贤</span><span class="pln"> </span><span class="pun">邹航</span><span class="pln"> </span><span class="pun">陈尊</span><span class="pln">
+</span><span class="pun">马英杰</span><span class="pln"> </span><span class="pun">刘峰</span><span class="pln"> </span><span class="pun">张郝静宇</span><span class="pln">
+</span><span class="pun">尹路</span><span class="pln"> </span><span class="pun">陈星灼</span><span class="pln"> </span><span class="pun">陈炯熙</span><span class="pln">
+</span><span class="pun">曾泽武</span><span class="pln"> </span><span class="pun">黄港</span><span class="pln"> </span><span class="pun">王春成</span><span class="pln">
+</span><span class="pun">李欣隆</span><span class="pln"> </span><span class="pun">冯东宇</span><span class="pln"> </span><span class="pun">张清棋</span><span class="pln">
+</span><span class="pun">宋雨航</span><span class="pln"> </span><span class="pun">蔡亦丞</span><span class="pln">
+</span><span class="pun">曾令安</span><span class="pln"> </span><span class="pun">温思达</span><span class="pln">
+</span><span class="pun">官怡婷</span><span class="pln"> </span><span class="pun">邓义丽</span><span class="pln"> </span><span class="pun">周雪</span><span class="pln">
+</span><span class="pun">安振</span><span class="pln"> </span><span class="pun">李平阳</span><span class="pln">
+</span><span class="pun">蒋翼龙</span><span class="pln"> </span><span class="pun">罗浪</span><span class="pln"> </span><span class="pun">郭鸿</span><span class="pln">
+</span><span class="pun">邱瑞中</span><span class="pln"> </span><span class="pun">张昕熠</span><span class="pln"> </span><span class="pun">曾俊浩</span><span class="pln">
+</span><span class="pun">彭荣康</span><span class="pln"> </span><span class="pun">符凯华</span><span class="pln"> </span><span class="pun">严加栋</span></pre></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2678" ng-bind="article.title" class="ng-binding">第十四届电子科技大学程序设计竞赛暨西南地区高校邀请赛决赛晋级名单</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/xwind/2678" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">887</span> visited, create by
+    <a href="/#/user/center/xwind" ng-bind="article.ownerName" class="ng-binding">xwind</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">6 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"><a href="#/article/show/2678">Read more &gt;&gt;</a></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2339" ng-bind="article.title" class="ng-binding">第十四届电子科技大学程序设计竞赛暨西南地区高校邀请赛</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/Toxic/2339" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">1052</span> visited, create by
+    <a href="/#/user/center/Toxic" ng-bind="article.ownerName" class="ng-binding">Toxic</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">5 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"><a href="#/article/show/2339">Read more &gt;&gt;</a></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/1423" ng-bind="article.title" class="ng-binding">校赛报名须知</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/Administrator/1423" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">2765</span> visited, create by
+    <a href="/#/user/center/Administrator" ng-bind="article.ownerName" class="ng-binding">Administrator</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">5 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"><a href="#/article/show/1423">Read more &gt;&gt;</a></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2269" ng-bind="article.title" class="ng-binding">请参加趣味赛的同学将Nickname改为真实姓名</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/Toxic/2269" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">431</span> visited, create by
+    <a href="/#/user/center/Toxic" ng-bind="article.ownerName" class="ng-binding">Toxic</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">10 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><p>学号一定要真实填写</p></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2190" ng-bind="article.title" class="ng-binding">第七届ACM趣味程序设计竞赛</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/Administrator/2190" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">578</span> visited, create by
+    <a href="/#/user/center/Administrator" ng-bind="article.ownerName" class="ng-binding">Administrator</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">5 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"><a href="#/article/show/2190">Read more &gt;&gt;</a></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2121" ng-bind="article.title" class="ng-binding">2015年暑假第一轮集训名单公布</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/xwind/2121" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">1018</span> visited, create by
+    <a href="/#/user/center/xwind" ng-bind="article.ownerName" class="ng-binding">xwind</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">10 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><h4 id="-div-2-">经过一个学期的训练，我们选拔以下同学进入第一轮Div.2暑假集训</h4></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"><a href="#/article/show/2121">Read more &gt;&gt;</a></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2063" ng-bind="article.title" class="ng-binding">电子科技大学ACM-ICPC代表队出征2015年世界总决赛！</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/135678942570/2063" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">512</span> visited, create by
+    <a href="/#/user/center/135678942570" ng-bind="article.ownerName" class="ng-binding">135678942570</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">1 year ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><p>电子科技大学ACM-ICPC代表队，将于5月17~21日参加第39届ACM国际大学生程序设计竞赛世界总决赛。 </p>
+<p>经过一个赛季的鏖战，最终UESTC_Monalisa队伍脱颖而出，他们将在集训队教练杨鹏老师的带领下，代表我校参加世界总决赛。</p>
+<p class="text-center">
+<img src="/images/article/135678942570/new/2015051621361553877.jpg" alt="title">
+<br>
+UESTC_Monalisa队（林伟平（左二），萧可（左三），齐朋辉（右三））在2014年北京站勇夺冠军
+</p>
+
+<p class="text-center">
+<img src="/images/article/Toxic/2062/201505182300120854.jpg" alt="title">
+<br>
+UESTC_Monalisa队在摩洛哥马拉喀什刚刚传回的照片
+</p>
+
+
+<h3 id="uestc_monalisa-">UESTC_Monalisa队伍介绍：</h3>
+<hr>
+<h4 id="-">林伟平（棱队长）：</h4>
+<p>胡建人，集训队总队长，现在大四，在队中主要负责几(背)何(锅)以及乱♂搞题，对于贪心，构造，猜结论等乱搞题的天赋无人能及，连连看大师。<del>232八大常委之一</del></p>
+<p>TC：<a href="http://community.topcoder.com/tc?module=MemberProfile&amp;cr=23065756" style="color: rgb(221, 204, 0);  font-weight: bold;">Lynn_Yi</a></p>
+<p>CF：<a href="http://codeforces.com/profile/hlwt" style="color:rgb(255, 0, 0); font-weight: bold;">hlwt</a></p>
+<!--![title](/images/article/135678942570/2063/2015051621510645281.jpg)-->
+
+<p><img src="/images/article/Toxic/2062/201505182253431022.jpg" alt="title"></p>
+<p>由于表情比较丰富，经常被截图当做表情使用。</p>
+<p><br></p>
+<h4 id="-">齐朋辉（齐爷）：</h4>
+<p>集训队少有的几个能以<code>爷</code>做后缀的人之一，现在大四，在队中专攻数据结构，图论等代码量大的题目，代码能力极强。感情生活丰富，常在半夜失眠并发表说说。</p>
+<p>TC：<a href="http://community.topcoder.com/tc?module=MemberProfile&amp;cr=23061861" style="color: rgb(221, 204, 0);  font-weight: bold;">qph-Jeremy</a></p>
+<p>CF：<a href="http://codeforces.com/profile/qph-Jeremy" style="color:rgb(221, 204, 0); font-weight: bold;">qph-Jeremy</a></p>
+<p>网上有流传齐爷和他妹子的照片，现帖子已被删。</p>
+<p><br></p>
+<h4 id="-">萧可（萧老爷）：</h4>
+<p>似乎是集训队唯一一个能以<code>老爷</code>做后缀的人，思维能力超强，代码能力相对较为薄弱，常常是由他将思路秒了然后由队友完成编码工作，少有的在大三冲进世界总决赛的选手。</p>
+<p>TC：因做得实在太少，编者暂时无法找到他的TC账号，待补充。</p>
+<p>CF：<a href="http://codeforces.com/profile/xiaoke" style="color:rgb(221, 204, 0); font-weight: bold;">xiaoke</a></p>
+<hr>
+<p>他们已于5月14日晚前往摩洛哥马拉喀什，祝愿他们能在20日举行的Final上再创佳绩！届时可以在斗鱼等平台上关注我校学子的表现！</p></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2030" ng-bind="article.title" class="ng-binding">第十三届电子科技大学程序设计竞赛获奖名单</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/Toxic/2030" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">862</span> visited, create by
+    <a href="/#/user/center/Toxic" ng-bind="article.ownerName" class="ng-binding">Toxic</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">1 year ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"><a href="#/article/show/2030">Read more &gt;&gt;</a></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/2005" ng-bind="article.title" class="ng-binding">数据结构专题结题报告收取情况</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/Toxic/2005" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">388</span> visited, create by
+    <a href="/#/user/center/Toxic" ng-bind="article.ownerName" class="ng-binding">Toxic</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">1 year ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"><a href="#/article/show/2005">Read more &gt;&gt;</a></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/1936" ng-bind="article.title" class="ng-binding">2015年电子科技大学ACM-ICPC暑假前集训计划及暑假集训队选拔方案</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/Toxic/1936" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">1241</span> visited, create by
+    <a href="/#/user/center/Toxic" ng-bind="article.ownerName" class="ng-binding">Toxic</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">10 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"><a href="#/article/show/1936">Read more &gt;&gt;</a></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/1844" ng-bind="article.title" class="ng-binding">第十三届电子科技大学程序设计竞赛暨西南地区高校邀请赛决赛晋级名单</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/mizhierji/1844" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">644</span> visited, create by
+    <a href="/#/user/center/mizhierji" ng-bind="article.ownerName" class="ng-binding">mizhierji</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">1 year ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><p>感谢大家的踊跃参与及积极配合，在此奉上<a href="http://acm.uestc.edu.cn/bbs/attachment/Solutions.pdf">初赛解题报告</a>。</p></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"><a href="#/article/show/1844">Read more &gt;&gt;</a></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/1422" ng-bind="article.title" class="ng-binding">OJ使用指南</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/Administrator/1422" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">832</span> visited, create by
+    <a href="/#/user/center/Administrator" ng-bind="article.ownerName" class="ng-binding">Administrator</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">6 months ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><p>欢迎来到电子科技大学在线测评系统(Online Judge, OJ)，聪明的Programmer！</p>
+<p>如果你是第一次来，那么这篇文章将对你很有帮助，请仔细阅读以下内容。</p>
+<p>本文包含以下几个部分：</p>
+<ul>
+<li>如何注册账号和登陆</li>
+<li>如何更新个人信息</li>
+<li>如何浏览题目</li>
+<li>如何提交代码</li>
+</ul>
+<h2 id="-">如何注册账号和登陆</h2>
+<p>点击网站右上角的<code>Sign in</code>，在下拉菜单中点击<code>Register</code>跳转到注册页面，填写所需的注册信息即可注册账号。</p>
+<p><strong>请注意：如果你想要参加校赛，那么请务必完整填写真实的个人信息，否则将无法进行校赛的注册。</strong></p>
+<p>注册完账号以后，继续点击<code>Sign in</code>，在下拉菜单中填写账号密码即可登录。</p>
+<h2 id="-">如何更新个人信息</h2>
+<p>如果想要更新个人信息，可以点击右上角的<code>Sign in</code>，点击<code>Edit profile</code>进入个人信息修改页面。</p>
+<h2 id="-">如何浏览题目</h2>
+<p>点击OJ左方菜单的<code>Problems</code>，就能看到我们OJ上面的题目列表了。</p>
+<p>点击题目标题可以查看题目，标题旁边的小字是题目的来源，<code>Solved</code>列的数字代表有多少份代码正确地通过了题目。</p>
+<p>点开某道题目，可以看到题目的描述。</p>
+<p><br><br><br>
+<img src="/images/article/Administrator/1422/2015031618570100619.png" alt="title"></p>
+<p><code>Input</code>部分说明了题目的输入格式。</p>
+<p><code>Output</code>部分说明了题目的输出格式。</p>
+<p><code>Sample Input and Output</code>是题目样例输入和输出。</p>
+<p>例如，在<a href="http://acm.uestc.edu.cn/#/problem/show/1">A+B</a>问题中，对于下面这一组输入：</p>
+<p> <code>1 2</code></p>
+<p>正确的输出应该是<code>3</code> </p>
+<p>在大标题下方的说明了题目的时间和空间限制，如果你提交的程序运行时间超过限制，你将会得到<code>Time Limit Exceed</code>的结果。</p>
+<p>类似地，如果内存使用超过限制，会得到<code>Memory Limit Exceed</code>的结果。</p>
+<p>除了以上两种，还有<code>Wrong Answer</code>, <code>Runtime Error</code>等等结果，具体请参考<a href="http://acm.uestc.edu.cn/#/article/show/1">Frequently Asked Questions</a>。</p>
+<p>我们最乐于见到的结果，当然是<code>AC(Accepted)</code>了！</p>
+<p>目前本OJ收录了1000多道题目，难度各异，其中包括了往届ACM趣味赛和校赛的题目。如果有志于在校赛取得好成绩，可以练习一下往年的题目。如果你是一个新手，可以做做来源是“C语言上机题”的系列题目。</p>
+<p>如果是第一次来这里，不妨做做这道简单的<a href="http://acm.uestc.edu.cn/#/problem/show/1">A+B</a>熟悉一下流程。</p>
+<h2 id="-">如何提交代码</h2>
+<p>看完题目以后，经过你一番思考，你想出了一个巧妙的解决问题的办法，你行云流水地在键盘上敲出了你的代码。当你仔细检查测试代码无误后，现在你要提交代码了！</p>
+<p><img src="/images/article/Administrator/1422/2015031618583816420.png" alt="title"></p>
+<p>点击题目页面的<code>Submit</code>按钮，将会弹出一个对话框，在中间的输入框中粘贴你的代码，在下方的语言选项中选择你使用的语言（本OJ目前支持<code>C</code>，<code>C++</code>，<code>Java</code>），点击<code>Submit</code>就可以提交代码了。</p>
+<p><img src="/images/article/Administrator/1422/2015031618585603721.png" alt="title"></p>
+<p>在你提交完代码，或者你在题目页面点击<code>Status</code>按钮时，将跳转到测评状态页面。</p>
+<p>这个页面显示了OJ上面最近几次代码提交的测评状态，经过短暂的等待后，你将会看到自己的代码的测评结果。</p>
+<p>测评结果的意义，请参见：<a href="http://acm.uestc.edu.cn/#/article/show/1">Frequently Asked Questions</a>。</p></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/1048" ng-bind="article.title" class="ng-binding">电子科技大学ACM-ICPC代表队出征2014年世界总决赛！</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/administrator/1048" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">543</span> visited, create by
+    <a href="/#/user/center/administrator" ng-bind="article.ownerName" class="ng-binding">administrator</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">2 years ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><p>电子科技大学ACM-ICPC代表队，将于6月21~26日参加第38届ACM国际大学生程序设计竞赛世界总决赛。
+经过一个赛季的鏖战，最终UESTC_Aspidochelone队伍脱颖而出，他们将在集训队教练杨鹏老师的带领下，代表我校参加世界总决赛。</p>
+<p class="text-center">
+<img src="/images/article/administrator/1048/201406231932130341.jpg" alt="title">
+<br>
+来自Final开幕式的最新合影！
+</p>
+
+<h3 id="uestc_aspidochelone-">UESTC_Aspidochelone队伍介绍：</h3>
+<hr>
+<h4 id="-">陈谷锋（大哥）：</h4>
+<p>小学生一个，特别不成熟，喜爱LOL和炉石。在比赛中经常以拍胸作为和队友的交流方式。有著名台词：“跟我耍屌？”，“我弱逼！”等。</p>
+<p>TC：<a href="http://community.topcoder.com/tc?module=MemberProfile&amp;cr=23002332" style="color: rgb(221, 204, 0);  font-weight: bold;">uestc-cgf</a></p>
+<p>CF：<a href="http://codeforces.com/profile/james" title="Grandmaster James" style="color:rgb(255, 0, 0); font-weight: bold;">James</a></p>
+<p><img src="/images/article/administrator/1048/201406231942029232.jpg" alt="title">
+大哥近照，有一说说大哥像蛤公。</p>
+<h4 id="-">廖孜 （廖巨巨） ：</h4>
+<p>集训队除了 <a href="http://mzry1992.renren.com">@李昀・スカーレット</a> 之外唯一能被称作巨巨的人物，身带亚军光环，获得过无数次亚军，特别喜爱光之美少女。身患强迫症，数组能开100000就绝不开100001的男人。</p>
+<p>TC：<a href="http://community.topcoder.com/tc?module=MemberProfile&amp;cr=22868483" style="color: rgb(238, 0, 0);  font-weight: bold;">gongbaoa</a> </p>
+<p>CF : <a href="http://codeforces.com/profile/gongbaoa" title="Grandmaster James" style="color:rgb(255, 0, 0); font-weight: bold;"> gongbaoa </a> </p>
+<p><img src="/images/article/administrator/1048/201406231942430753.jpg" alt="title">年轻时的廖巨巨</p>
+<h4 id="-">陈岳航 （岳航君，岳蛤君，蛤主席）：</h4>
+<p>集训队元老，第二次参加Final，特别喜爱膜蛤，大蛤丝一枚。galgame资深学者，玩过的galgame可以绕地球一圈。</p>
+<p>TC：<a href="http://community.topcoder.com/tc?module=MemberProfile&amp;cr=22866257" style="color: rgb(238, 0, 0);  font-weight: bold;">kennethsnow</a> </p>
+<p>CF：<a href="http://codeforces.com/profile/kennethsnow" title="Grandmaster James" style="color:rgb(255, 0, 0); font-weight: bold;"> kennethsnow </a> </p>
+<p>岳航君中二时曾在我校BBS发过贴，已成为我校BBS最高楼，每当考试之前很多人会慕名去膜拜，百试百灵，特别好用，链接：<a href="http://acm.uestc.edu.cn/bbs/read.php?tid=974">http://acm.uestc.edu.cn/bbs/read.php?tid=974</a></p>
+<p><img src="/images/article/administrator/1048/201406231943098824.jpg" alt="title">蛤主席在湖南赛区的演讲照片</p>
+<hr>
+<p>他们已于6月21日前往叶卡捷琳堡，祝愿他们能在25日举行的Final上取得好成绩！</p></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list --><div class="cdoj-article ng-scope" ng-repeat="article in list">
+          <article-item article="article" class="ng-isolate-scope"><div>
+  <h1><a href="#/article/show/864" ng-bind="article.title" class="ng-binding">OJ编译器喜升级</a>
+  </h1>
+
+  <div>
+    <a ng-show="$root.hasLogin &amp;&amp; $root.currentUser.userName == article.ownerName" href="/#/article/editor/administrator/864" class="ng-hide">
+      <i class="fa fa-pencil"></i>Edit
+    </a>
+    <span ng-bind="article.clicked" class="ng-binding">237</span> visited, create by
+    <a href="/#/user/center/administrator" ng-bind="article.ownerName" class="ng-binding">administrator</a>
+    , last modified at
+    <span class="cdoj-article-post-time ng-isolate-scope" ui-time="" time="article.time" inline="true"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: inline;" ng-style="{display: getInline()}" class="ng-binding">2 years ago</div></span>
+  </div>
+
+  <div class="cdoj-article-summary">
+    <markdown content="article.content" class="ng-isolate-scope"><p>闲着蛋疼把<code>GCC</code>升级到了<code>4.7.2</code>，至于<code>4.8.X</code>和<code>4.9.X</code>个人觉得暂时没必要。</p>
+<p>然后在<a href="/#/user/center/CureHappy">@CureHappy</a>的强烈建议下开启了<code>C++11</code>标准。</p>
+<p><img src="/images/article/administrator/864/201405151825526191.gif" alt="title"></p>
+<p>可喜可贺可喜可贺。</p></markdown>
+  </div>
+  <p ui-readmore="" has-more="article.hasMore" article-id="article.articleId" class="ng-isolate-scope"></p>
+  <hr ng-show="$index < list.length - 1" class="ng-hide">
+</div></article-item>
+        </div><!-- end ngRepeat: article in list -->
+      </div>
+</div>
+    </div>
+    <div class="col-md-12 ng-hide" ng-show="isRecentContests">
+      <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th>OJ</th>
+          <th>Name</th>
+          <th style="width: 12em;">Start time</th>
+          <th>Week</th>
+          <th>Access</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://abc046.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">AtCoder Beginner Contest 046</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">21 hours from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://arc062.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">AtCoder Regular Contest 062</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">21 hours from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">HackerRank</td>
+          <td>
+            <a href="http://www.hackerrank.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">OpenBracket CodeSprint</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">22 hours from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Leetcode</td>
+          <td>
+            <a href="https://leetcode.com/contest/detail/9" ng-bind="contest.name" target="_blank" class="ng-binding">LeetCode Weekly Contest 9</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 day from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Codechef</td>
+          <td>
+            <a href="https://www.codechef.com/GMCO2016" ng-bind="contest.name" target="_blank" class="ng-binding">Techfest International Coding Challenge - Game of Codes</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 day from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Codeforces</td>
+          <td>
+            <a href="http://codeforces.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">Codeforces Round #376 (Div. 2)</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 day from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">UOJ</td>
+          <td>
+            <a href="http://uoj.ac/contest/35" ng-bind="contest.name" target="_blank" class="ng-binding">UOJ Easy Round #7</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 day from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Codeforces</td>
+          <td>
+            <a href="http://codeforces.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">Codeforces Round #377 (Div. 2)</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">3 days from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">MON</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Codechef</td>
+          <td>
+            <a href="https://www.codechef.com/NPLQ1601" ng-bind="contest.name" target="_blank" class="ng-binding">NPL Elimination Round</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">3 days from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">TUE</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">HackerRank</td>
+          <td>
+            <a href="http://www.hackerrank.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">101 Hack 42</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">4 days from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">WED</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Codechef</td>
+          <td>
+            <a href="https://www.codechef.com/IFCAMR16" ng-bind="contest.name" target="_blank" class="ng-binding">ICPC For Schools, Amrita University</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 week from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Codeforces</td>
+          <td>
+            <a href="http://codeforces.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">Canada Cup 2016</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 week from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Codeforces</td>
+          <td>
+            <a href="http://codeforces.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">2016-2017 ACM-ICPC, NEERC, &amp;#1070;&amp;#1078;&amp;#1085;&amp;#1099;&amp;#1081; &amp;#1095;&amp;#1077;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1088;&amp;#1090;&amp;#1100;&amp;#1092;&amp;#1080;&amp;#1085;&amp;#1072;&amp;#1083;</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 week from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">HackerRank</td>
+          <td>
+            <a href="http://www.hackerrank.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">Sears - Dots &amp; Arrows</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 week from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://code-festival-2016-qualc.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">CODE FESTIVAL 2016 qual C</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 week from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Codechef</td>
+          <td>
+            <a href="https://www.codechef.com/COOK75" ng-bind="contest.name" target="_blank" class="ng-binding">October Cook-Off 2016</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 week from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">MON</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Topcoder</td>
+          <td>
+            <a href="http://community.topcoder.com/tc" ng-bind="contest.name" target="_blank" class="ng-binding">SRM 701</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 week from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">WED</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">BestCoder</td>
+          <td>
+            <a href="http://bestcoder.hdu.edu.cn/contests/contest_show.php?cid=730" ng-bind="contest.name" target="_blank" class="ng-binding">BestCoder Round #89</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">2 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://agc006.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">AtCoder Grand Contest 006</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">2 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Codechef</td>
+          <td>
+            <a href="https://www.codechef.com/LTIME41" ng-bind="contest.name" target="_blank" class="ng-binding">October Lunchtime 2016</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">2 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">HackerRank</td>
+          <td>
+            <a href="http://www.hackerrank.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">WalmartLabs Codesprint (Algorithms)</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">2 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">HackerRank</td>
+          <td>
+            <a href="http://www.hackerrank.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">WalmartLabs Codesprint (Machine Learning)</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">2 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">HackerRank</td>
+          <td>
+            <a href="http://www.hackerrank.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">Week of Code 25</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">2 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">MON</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">HackerRank</td>
+          <td>
+            <a href="http://www.hackerrank.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">HourRank 14</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">2 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">THU</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">BestCoder</td>
+          <td>
+            <a href="http://bestcoder.hdu.edu.cn/contests/contest_show.php?cid=731" ng-bind="contest.name" target="_blank" class="ng-binding">BestCoder Round #90</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">3 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">HackerRank</td>
+          <td>
+            <a href="http://www.hackerrank.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">NCR CodeSprint</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">3 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://abc047.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">AtCoder Beginner Contest 047</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">3 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://arc063.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">AtCoder Regular Contest 063</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">3 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Codechef</td>
+          <td>
+            <a href="https://www.codechef.com/IEMCO16" ng-bind="contest.name" target="_blank" class="ng-binding">IEM Coding Olympiad 2016</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">3 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">HackerRank</td>
+          <td>
+            <a href="http://www.hackerrank.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">University CodeSprint</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">3 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">FRI</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">HackerRank</td>
+          <td>
+            <a href="http://www.hackerrank.com/contests" ng-bind="contest.name" target="_blank" class="ng-binding">CODHERS</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">4 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://agc007.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">AtCoder Grand Contest 007</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">4 weeks from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://abc048.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">AtCoder Beginner Contest 048</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 month from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://arc064.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">AtCoder Regular Contest 064</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 month from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">Topcoder</td>
+          <td>
+            <a href="http://community.topcoder.com/tc" ng-bind="contest.name" target="_blank" class="ng-binding">DNA Sequencing 2 MM</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 month from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SAT</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://abc049.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">AtCoder Beginner Contest 049</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 month from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests --><tr ng-repeat="contest in recentContests" class="ng-scope">
+          <td ng-bind="contest.oj" class="ng-binding">AtCoder</td>
+          <td>
+            <a href="https://arc065.contest.atcoder.jp" ng-bind="contest.name" target="_blank" class="ng-binding">AtCoder Regular Contest 065</a>
+          </td>
+          <td ui-time="" time="contest.start_time" class="ng-isolate-scope"><div ng-mouseover="mouseOver()" ng-mouseleave="mouseLeave()" style="width: 100%; display: block;" ng-style="{display: getInline()}" class="ng-binding">1 month from now</div></td>
+          <td ng-bind="contest.week" class="ng-binding">SUN</td>
+          <td ng-bind="contest.access" class="ng-binding"></td>
+        </tr><!-- end ngRepeat: contest in recentContests -->
+        </tbody>
+      </table>
+      <markdown content="recentContestsDescription" class="ng-isolate-scope"><p>该数据源允许直接引用，但请注明本段文字。</p>
+<p>数据来源：<a href="http://contests.acmicpc.info/contests.json">http://contests.acmicpc.info/contests.json</a> 。</p>
+<p>本数据源力求支持所有国内ACMer的常用OJ，如果希望添加某个OJ或者发现某个OJ无法正常获取比赛信息，
+请联系doraemonok#163.com (#替换成@)。</p></markdown>
+    </div>
+    <div class="col-md-12 ng-hide" ng-show="isArticle">
+      <markdown content="article.content" class="ng-isolate-scope"><h3 id="copyright">Copyright</h3>
+<p>cdoj, UESTC ACMICPC Online Judge</p>
+<p>Copyright (c) 2013 fish <a href="mailto:lyhypacm@gmail.com">lyhypacm@gmail.com</a>,
+ mzry1992 <a href="mailto:muziriyun@gmail.com">muziriyun@gmail.com</a></p>
+<p>This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.</p>
+<p>This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.</p></markdown>
+    </div>
+  </div>
+</div>
+</div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-md-12" style="font-size: 10px;">
+        <hr style="margin: 0;" class="colorful">
+        <p class="muted">
+          UESTC Online Judge
+        </p>
+        <p class="muted">
+          Copyright (C) 2014
+          Ruins He(<a href="https://github.com/lyhypacm">@lyhypacm</a>),
+          Jianjin Fan(<a href="https://github.com/pfctgeorge">@pfctgeorge</a>) and
+          Yun Li(<a href="https://github.com/mzry1992">@mzry1992</a>).
+          <a href="http://uestc-acm.github.io/CDOJ/">Project home</a>
+        </p>
+        <p class="muted">
+          Any Problem, Please Report On <a href="https://github.com/UESTC-ACM/CDOJ/issues">Issues Page</a>
+          Or Discuss With Us In <a href="mailto:cdoj-users@googlegroups.com">Mailing List</a>.
+        </p>
+        <p class="muted">
+          Currently online registered users:
+            <span ng-bind="onlineUsersCount" class="ng-binding">9</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<ui-loading-notification><div>
+<!-- ngIf: show -->
+<!-- ngIf: show -->
+</div></ui-loading-notification>
+
+<script src="/bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/dist/js/cdoj.min.js"></script>
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: STIXSizeOneSym, sans-serif;"></div></div></body></html>
